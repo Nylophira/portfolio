@@ -1,2 +1,7 @@
 @charset "UTF-8";
-/* Couleurs du thème *//*# sourceMappingURL=theme.css.map */
+/* Couleurs du thème */
+/* les Polices */
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text&family=DM+Serif+Display&display=swap");
+* {
+  font-family: "Crimson Text", "DM Serif Display", Arial;
+}/*# sourceMappingURL=theme.css.map */

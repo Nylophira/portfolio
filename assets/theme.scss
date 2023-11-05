@@ -4,3 +4,10 @@ $jaune : #F6AA1C;
 $marron: #621708;
 $rFonce: #941B0C;
 $rouge: #BC3908;
+
+/* les Polices */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=DM+Serif+Display&display=swap');
+
+* {
+    font-family: 'Crimson Text', 'DM Serif Display', Arial  ;
+}
