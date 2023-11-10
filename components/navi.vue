@@ -6,46 +6,44 @@
 
 //Changement de format en fonction de la localisation
 const entree = ref("entree");
-const actif = ref("entree");
+const actif = ref("");
+
 const route = useRoute();
 
-    watch(() => route.path, (newPath) => {
-      if (newPath === '/') {
+watch(() => route.path, (newPath) => {
+    if (newPath === '/') {
         entree.value = 'entree';
-        actif.value = 'entree';
-      } else {
+    } else {
         entree.value = 'autre';
-        actif.value = newPath;
-      }
-    });
+    }
+});
 
-
+//soulignement du cv ou du contact
+function cvCont(qui) {
+    actif.value = qui;
+} 
 </script>
 
 <template>
-    <!--  :class="actif=='/pres'? 'active':''"  
-        :class="actif=='/projets'? 'active':''"
-         :class="actif=='/competences'? 'active':''"
-        ça fonctionne mais y a un problème sur le cv / contact du coup voir pour prendre les classes de vue plutôt ?-->
     <nav :class=entree class="px-3">
-        <ul class="nav nav-underline justify-content-end">       
+        <ul class="nav nav-underline justify-content-end d-flex align-items-center">       
             <li class="nav-item" v-if="entree=='autre'">
-                <NuxtLink to="/" class="nav-link">Accueil</NuxtLink>
+                <NuxtLink to="/" class="nav-link icone icon-link "><i class="bi bi-house"></i></NuxtLink>
             </li>
-            <li class="nav-item ms-auto">
+            <li class="nav-item ms-auto px-4">
                 <NuxtLink to="/pres" class="nav-link" >Présentation</NuxtLink>
             </li>
-            <li class="nav-item">
+            <li class="nav-item px-4">
                 <NuxtLink to="/projets" class="nav-link" >Projets</NuxtLink>
             </li>
-            <li class="nav-item">
+            <li class="nav-item px-4">
                 <NuxtLink to="/competences" class="nav-link">Compétences</NuxtLink>
             </li>
-            <li class="nav-item">
-                <NuxtLink to="/contact" class="nav-link">CV</NuxtLink>
+            <li class="nav-item px-4">
+                <NuxtLink to="/contact" class="nav-link" :class="actif==='CV'? '':'non'" @click="cvCont('CV')">CV</NuxtLink>
             </li>
-            <li class="nav-item">
-                <NuxtLink to="/contact" class="nav-link">Contact</NuxtLink>
+            <li class="nav-item px-4">
+                <NuxtLink to="/contact" class="nav-link" :class="actif==='cont'? '':'non'" @click="cvCont('cont')">Contact</NuxtLink>
             </li>
         </ul>
     </nav>
@@ -58,12 +56,16 @@ const route = useRoute();
 
    .nav {
         
+        padding-top: 5px;
+
         .nav-link {
             color: white;
             text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+
         }
         .nav-link:hover {
             color: white;
+            border-bottom: 3px solid rgb(255, 255, 255);
         }
     }
 }
@@ -72,12 +74,32 @@ const route = useRoute();
     .nav-link {
         color: rgb(0, 0, 0);
         font-family: 'DM Serif Display';
-       
-    }
+        
+        .bi.bi-house {
+            font-size: 24px;
+        }
+
+    }  
 
     .nav-link:hover {
         color: $rouge;
     }
+
+    .nav-link.icone {
+        border-bottom: none;
+    }
+
+
+    .router-link-active.router-link-exact-active.nav-link {
+        border-bottom: 3px solid $rouge;
+        color: black;
+
+    }
+
+    .router-link-active.router-link-exact-active.nav-link.non {
+            border-bottom: none;
+        }
+
 }
 
 

@@ -10,5 +10,11 @@ export default defineNuxtConfig({
         }
       }
     }
-  }
+  }/*,
+   plugins: [
+    {
+      src: './plugins/vue3-particles.ts',
+      mode: 'client',
+    }
+  ] */
 })

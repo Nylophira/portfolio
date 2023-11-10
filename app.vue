@@ -15,6 +15,7 @@ useHead({
 </script>
 
 <template>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
    <Navi />
   <div>
     <NuxtPage />
@@ -28,7 +29,7 @@ useHead({
 
 /* Fichiers Bootstrap */
 @import 'bootstrap/dist/css/bootstrap.min.css';
-
+/* @import 'bootstrap-icons/font/bootstrap-icons.css' */
 
 
 </style>
