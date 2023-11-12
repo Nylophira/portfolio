@@ -1,15 +1,19 @@
 <script setup>
 
- /*   const props = defineProps({
-  msg: Object
-}) */
+const route = useRoute();
 
 //Changement de format en fonction de la localisation
 const entree = ref("entree");
+
+///en cas d'actualisation de la page
+if (route.path == "/") {
+  entree.value = 'entree';
+} else {
+    entree.value = 'autre';
+}
 const actif = ref("");
 
-const route = useRoute();
-
+//en cas de changement de page
 watch(() => route.path, (newPath) => {
     if (newPath === '/') {
         entree.value = 'entree';
@@ -28,7 +32,11 @@ function cvCont(qui) {
     <nav :class=entree class="px-3">
         <ul class="nav nav-underline justify-content-end d-flex align-items-center">       
             <li class="nav-item" v-if="entree=='autre'">
-                <NuxtLink to="/" class="nav-link icone icon-link "><i class="bi bi-house"></i></NuxtLink>
+                <NuxtLink to="/" class="nav-link icone icon-link ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"  fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                        <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+                    </svg>
+                </NuxtLink>
             </li>
             <li class="nav-item ms-auto px-4">
                 <NuxtLink to="/pres" class="nav-link" >Présentation</NuxtLink>
@@ -55,8 +63,6 @@ function cvCont(qui) {
     background-color: $rouge;
 
    .nav {
-        
-        padding-top: 5px;
 
         .nav-link {
             color: white;
