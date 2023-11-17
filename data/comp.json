@@ -1,9 +1,81 @@
 [
     {
-        "id": 1,
+        "id": 100,
+        "name":"Zoho Deluge",
+        "lvl":95,
+        "img": "/img/deluge.jpg",
+        "type": "natif"
+
+    },
+    {
+        "id": 101,
         "name":"HTML 5",
         "lvl":90,
-        "img": "/img/HTML5.jpg"
+        "img": "/img/HTML5.jpg",
+        "type": "natif"
 
+    }, 
+    {
+        "id": 102,
+        "name":"CSS 3",
+        "lvl":90,
+        "img": "/img/CSS3.png",
+        "type": "natif"
+    },
+    {
+        "id": 103,
+        "name":"Java Script",
+        "lvl":80,
+        "img": "/img/JS.png",
+        "type": "natif"
+    },
+    {
+        "id": 104,
+        "name":"Php",
+        "lvl":70,
+        "img": "/img/PHP.png",
+        "type": "natif"
+    },
+    {
+        "id": 105,
+        "name":"SQL",
+        "lvl":70,
+        "img": "/img/SQL.png",
+        "type": "natif"
+    },
+    {
+        "id": 106,
+        "name":"C",
+        "lvl":20,
+        "img": "/img/C.png",
+        "type": "natif"
+    }, 
+    {
+        "id": 107,
+        "name":"Python",
+        "lvl":10,
+        "img": "/img/Python.png",
+        "type": "natif"
+    },
+    {
+        "id": 108,
+        "name":"React",
+        "lvl":40,
+        "img": "/img/React.png",
+        "type": "framework"
+    },
+    {
+        "id": 109,
+        "name":"Vue.js",
+        "lvl":25,
+        "img": "/img/Vue.png",
+        "type": "framework"
+    },
+    {
+        "id": 110,
+        "name":"Bootstrap",
+        "lvl":50,
+        "img": "/img/Bootstrap.png",
+        "type": "framework"
     }
 ]

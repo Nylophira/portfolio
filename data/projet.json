@@ -1,0 +1,117 @@
+[
+    {
+        "id": 0,
+        "name": "Création de la page d'accueil d'un site internet",
+        "language": [
+            "CSS",
+            "HTML"
+        ],
+        "outil": [
+            "Figma"
+        ],
+        "pictures": "/img/bookiCov.png",
+        "github":"https://github.com/Nylophira/Projet2",
+        "carrousel": [
+            "",
+            ""
+        ],
+        "description": [
+            "",
+            ""
+        ]
+    },
+    {
+        "id": 1,
+        "name": "Dynamiser le portfolio d'une architecte d'intérieur ",
+        "language": [
+            "Java Script"
+        ],
+        "outil": [
+            "Postman"
+        ],
+        "pictures": "/img/bluelCov.png",
+        "github":"https://github.com/Nylophira/P3",
+        "carrousel": [
+            "",
+            ""
+        ],
+        "description": [
+            "",
+            ""
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Mise en place du front-end d'un site de location immobilière",
+        "language": [
+            "React",
+            "Sass"
+        ],
+        "pictures": "/img/kasaCov.png",
+        "github":"https://github.com/Nylophira/Projet_6",
+        "carrousel": [
+            "",
+            ""
+        ],
+        "description": [
+            "",
+            ""
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Mise en place d'un back-end sur un site de notation de livres",
+        "language": [
+            "Java Script",
+            "Node.js"
+        ],
+        "pictures": "/img/livreCov.png",
+        "github":"https://github.com/Nylophira/P7_grimoire",
+        "carrousel": [
+            "",
+            ""
+        ],
+        "description": [
+            "",
+            ""
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Automatisation du suivi des qualifications des salariés",
+        "language": [
+            "Deluge",
+            "Php",
+            "SQL"
+        ],
+        "pictures": "/img/habCov.png",
+        "github":"",
+        "carrousel": [
+            "",
+            ""
+        ],
+        "description": [
+            "",
+            ""
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Mise en place d'un logiciel de gestion de la sécurité au travail",
+        "language": [
+            "Java Script",
+            "Php",
+            "SQL"
+        ],
+        "pictures": "/img/kalyCov.png",
+        "github":"",
+        "carrousel": [
+            "",
+            ""
+        ],
+        "description": [
+            "",
+            ""
+        ]
+    }
+]
