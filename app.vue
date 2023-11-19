@@ -17,7 +17,7 @@ useHead({
 <template>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
    <Navi />
-  <div>
+  <div class="container d-flex justify-content-center align-items-center">
     <NuxtPage />
   </div>
 </template>
@@ -31,9 +31,18 @@ useHead({
 @import 'bootstrap/dist/css/bootstrap.min.css';
 /* @import 'bootstrap-icons/font/bootstrap-icons.css' */
 
- body {
-  height: max-content;
-} 
+/*  body {
+  height: 100vh;
+  margin: 0;
+}*/
 
+#__nuxt {
+  height: 100vh;
+}
+
+.container.d-flex.justify-content-center.align-items-center {
+  height: 93%;
+}
+ 
 
 </style>

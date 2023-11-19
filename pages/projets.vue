@@ -13,7 +13,7 @@ import projet from "../data/projet.json";
    <!--  <div class="position-absolute top-50 start-50 translate-middle">
         <p>Projets</p>
     </div> -->
-    <div class="row row-cols-auto row-cols-md-2 g-4 position-absolute top-50 start-50 translate-middle justify-content-center">
+    <div class="row row-cols-auto row-cols-md-2 g-4 justify-content-center">
         <div class="col d-flex align-items-center" v-for="values in projet" :key="values.id">
             <UnProjet :nom="values.name" :langue="values.language" :cov="values.pictures"/>
         </div>

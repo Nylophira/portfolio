@@ -24,16 +24,33 @@ function clikPhoto (elem) {
    
 }
 
-/* watch( voirNatif, () => {
-    clikPhoto;
-} );
- */
 </script>
 
 <template>
     <decor :couleur="rFonce" :taille="zero" :larg="moitie"/>
-    <div id="ContComp" class="d-flex flex-column align-items-center ">
-       <!--  <h2 id="titreComp">Liste des compétences</h2> -->
+        <div class="row d-flex h-100 align-items-center">
+            <div  @click="clikPhoto('natif')" class="col position-relative d-flex">
+                <div class="w-100 d-flex justify-content-center" v-if="voirNatif==false">
+                    <h3 class="position-absolute mt-5 fw-bold">Langage de développement</h3>
+                    <img src="/img/php-illus2.jpg" alt="Personne tenant un autocollant php"  class="img-fluid w-100 h-100">
+                </div>
+            </div>
+            <div class="col">
+               <div class="row">
+                    <div class="col position-relative d-flex justify-content-center">
+                        <h3 class="position-absolute mt-5 fw-bold">Framework et librairie</h3>
+                        <img src="/img/react-illus.jpg" alt="Personne tenant un autocollant react"  class="img-fluid w-100 object-fit-cover">
+                    </div>
+               </div>
+               <div class="row">
+                    <div class="col">
+                        Partie ent
+                    </div>
+               </div>
+            </div>
+        </div>
+   <!--  <div id="ContComp" class="d-flex flex-column align-items-center ">
+        <h2 id="titreComp">Liste des compétences</h2> 
         <div id="comp" class="d-flex flex-row justify-content-around">
             <div @click="clikPhoto('natif')" id="natif" class="d-flex flex-column align-items-center justify-content-center border">
                 <div v-if="voirNatif==false" id="imgCont" class="position-relative start-0 d-flex flex-column align-items-center">
@@ -57,14 +74,24 @@ function clikPhoto (elem) {
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </div
+    </div>>-->
 </template>
 
 <style lang="scss">
 
+.row.d-flex.h-100.align-items-center {
+    .col {
+        height: 80%;
 
-#ContComp {
+        h3.position-absolute.mt-5 {
+            color: white;
+        }
+    }
+}
+
+
+/* #ContComp {
     
     margin-top: 5%;
     //height: 80%;
@@ -77,7 +104,7 @@ function clikPhoto (elem) {
         #natif, #framework {
             width: 45%;
             //height: 80%;
-            height: 600px;
+            height: 550px;
             border-radius: 30px;
             box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
             
@@ -114,7 +141,7 @@ function clikPhoto (elem) {
               
         }
     }
-}
+} */
 
 
 
