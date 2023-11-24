@@ -3,103 +3,195 @@
 const props = defineProps ({
     nom: String,
     langue: Array,
-    cov: String
+    cov: String,
+    git: String,
+    carrousel: Array,
+    descrip: Array
+    //valeur: Boolean
 })
 
-const open = ref(false);
+/*const open = ref(props.valeur);
+ function openModal () {
+    open.value = !open.value;
+   emit('ouvert', {isOpen: open.value, name: nomm.value});
+   console.log(open.value); 
+}*/
 
-function openModal () {
-    open.value = !open.value
+
+//partie si la modale est externe
+/* const nomm = ref(props.nom);
+const emit = defineEmits(['ouvert']);
+emit('ouvert', {name: nomm.value}); */
+
+
+///partie si la modale est ici.
+const open = ref(false);
+ function openModal () {
+    open.value = !open.value;
 }
+
+//partie carrousel
+const tablCarr = ref(props.carrousel.length);
+function bougebouge (bouton) {
+    const photo = document.querySelector(".active");
+    photo.classList.remove("active");
+    const ou = parseInt(photo.id);
+    let newP = photo;
+    if (bouton == "next") {
+        //console.log(ou+1);
+        if(ou+1>=tablCarr.value) {
+            newP = document.getElementById(0);
+        } else {
+            newP = document.getElementById(ou+1);
+        }
+    } else {
+        if(ou==0) {
+           // console.log(ou-1);
+            newP = document.getElementById(tablCarr.value-1);
+        } else {
+            newP = document.getElementById(ou-1);
+        }
+    }
+    newP.classList.add("active");
+}
+
+///première illu 
+onUpdated(() => {
+
+    const cible = document.getElementById(0);
+    if (cible) {
+        cible.classList.add("active");
+    }
+})
+
+
 
 </script>
 
 <template>
-        <div @click="openModal" class="card d-flex align-items-center">
+        <!----- partie card ------->
+        <div @click="openModal()" class="card h-100 w-100 d-flex">
             <i class="bi bi-info-circle-fill"></i>
-            <img :src="cov" class="card-img-top" alt="...">
-            <div class="card-body d-flex align-items-center">
-                <h2 class="card-title">{{nom}}</h2>
-                <!-- <p class="card-text" >Les langues utilisées sont : </p>
-                <ul class="card-text">
-                    <li v-for="x in langue">{{x}}</li>
-                </ul >-->
+            <img :src="cov" class="card-img-top img-fluid" alt="illustration du projet">
+            <div class="card-body d-flex align-items-end flex-column justify-content-between pb-0 pt-1">
+                <h2 class="card-title text-center mb-0">{{nom}}</h2>
+                <div id="contIlluLang" class="d-flex pe-2 pb-1">
+                    <img v-for="source in langue" :src="source" alt="langage de développement" class="img-fluid me-1"> 
+                </div>
             </div>
         </div>
-        <div v-if="open" class="modal-overlay" @click="openModal"></div>
-        <div v-if="open" class="modal" tabindex="-1">
+        <!----- partie modale ------->
+       <div v-if="open" class="modal-overlay position-absolute top-0 start-0 w-100 h-100" @click="openModal()"></div>
+       <div v-if="open" class="modal translate-middle top-50 start-50" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title">{{ nom }}</h3>
-                    <button @click="openModal" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Modal body text goes here.</p>
-                </div>
-                <div class="modal-footer">
-                    <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button> -->
-                </div>
+                    <div class="modal-header">
+                        <a v-if="git" :href="git" class="d-flex"><i class="bi bi-github"></i></a>
+                        <!--  fonctionne pas la couleur du border.. -->
+                        <h3 class="modal-title ms-3 ps-1 border-danger border-start border-2">{{ nom }}</h3>
+                        <button @click="openModal()" type="button" class="btn-close align-self-start" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                   <!--  fonctionne pas le slide fade... -->
+                    <div id="carouselE" class="carousel slide carousel-fade">
+                        <div class="carousel-inner">
+                            <div class="carousel-item" v-for="(values, index) in carrousel" :key="index" :id="index">
+                                <img :src=values class="d-block w-100" alt="...">
+                                <div class="modal-footer">
+                                    <p>{{descrip[index]}}</p>
+                                </div>
+                            </div>
+                        </div>
+                       <!--  <button class="carousel-control-prev" type="button" data-bs-target="#carouselE" data-bs-slide="prev"> -->
+                        <button @click="bougebouge('prev')" class="carousel-control-prev" type="button">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                           <!--  <button class="carousel-control-next" type="button" data-bs-target="#carouselE" data-bs-slide="next"> -->
+                        <button @click="bougebouge('next')" class="carousel-control-next" type="button">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-
+        
 </template>
 
 <style lang="scss">
 
-.row.row-cols-auto.row-cols-md-2.g-4 {
+#contProjets {
 
-    .col .modal {
+    .modal {
         display: flex;
         width: max-content;
-        height: max-content;
-    }
+        //height: max-content;
+        height: 90%;
 
-    .col .modal-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        .modal-header {
+            
+            /* .modal-title.border-start.border-2.border-danger{
+                border-left-color: $rouge;
+            } */
+            
+            .bi.bi-github {
+                font-size: 30px;
+                color: black
+            };
+        }
+
+         /* #carouselE {
+            img {
+                height: 300px;
+                object-fit: cover;
+            }
+        } */
+    } 
+
+    .modal-overlay {
             background: rgba(0, 0, 0, 0.5);
             z-index: 999;
     }
-    .col .card {
 
-        height: 100%;
-        width: 100%;
-        box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.10);
-        border-radius: 30px;
+    .col-sm-4.mb-2.mb-sm-0.g-3 {
+        .card {
+            box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.10);
+            border-radius: 30px;
 
-        .bi.bi-info-circle-fill {
-            display: none;
-           
-        } 
+            .bi.bi-info-circle-fill {
+                display: none;
+            
+            } 
 
+        .card-img-top {
+                
+                border-radius: 30px 30px 0 0;
+                object-fit: cover;
+                height: 60%;
+        }
 
-       .card-img-top {
-            height: 69%;
-            margin-top: 1%;
-            width: 98%;
-            border-radius: 30px 30px 0 0;
-            object-fit: cover;
-       }
+        .card-body {
 
-       .card-body {
             height: 30%;
-            .card-title, .card-text {
-                font-size: 14px;
-                margin: 0;
-                text-align: center;
-            }
 
+                .card-title, .card-text {
+                    font-size: 14px;
+                }
+
+                #contIlluLang {
+                    height: 25%;
+                    .img-fluid {
+                        height: 100%;
+                    }
+                }
+
+            }
         }
     }
 
    /*  A changer pour l'animation */
-    .col .card:hover {
+    .col-sm-4.mb-2.mb-sm-0.g-3 .card:hover {
+
          .bi.bi-info-circle-fill {
             display: flex;
             position: absolute;
@@ -109,7 +201,7 @@ function openModal () {
             color: grey;
         }
         .card-img-top {
-            height: 98%;
+            height: 100%;
             border-radius: 30px;
         }
 

@@ -77,5 +77,19 @@
         "lvl":50,
         "img": "/img/Bootstrap.png",
         "type": "framework"
+    },
+    {
+        "id": 111,
+        "name":"MySQL",
+        "lvl":75,
+        "img": "/img/mysql.png",
+        "type": "ent"
+    },
+    {
+        "id": 112,
+        "name":"Node.js",
+        "lvl":85,
+        "img": "/img/node.png",
+        "type": "ent"
     }
 ]

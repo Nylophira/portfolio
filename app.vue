@@ -8,8 +8,12 @@ useHead({
   title: 'Portfolio - Amandine MILLET',
   meta: [
     { name: 'description', content: 'Présentation de mes compétences de développeur web' }
-  ]
+  ]/* ,
+  script: [
+    { src: './bootstrap/dist/js/bootstrap.min.js' }
+  ] */
 })
+
 
 
 </script>
@@ -31,10 +35,6 @@ useHead({
 @import 'bootstrap/dist/css/bootstrap.min.css';
 /* @import 'bootstrap-icons/font/bootstrap-icons.css' */
 
-/*  body {
-  height: 100vh;
-  margin: 0;
-}*/
 
 #__nuxt {
   height: 100vh;
@@ -42,6 +42,7 @@ useHead({
 
 .container.d-flex.justify-content-center.align-items-center {
   height: 93%;
+
 }
  
 

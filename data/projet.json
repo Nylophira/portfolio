@@ -3,8 +3,8 @@
         "id": 0,
         "name": "Création de la page d'accueil d'un site internet",
         "language": [
-            "CSS",
-            "HTML"
+            "/img/CSS3.png",
+            "/img/HTML5.jpg"
         ],
         "outil": [
             "Figma"
@@ -12,19 +12,21 @@
         "pictures": "/img/bookiCov.png",
         "github":"https://github.com/Nylophira/Projet2",
         "carrousel": [
-            "",
-            ""
+            "/img/booki/booki-ex-2.png",
+            "/img/booki/booki-ex-1.png",
+            "/img/booki/booki-ex-3.png"
         ],
         "description": [
-            "",
-            ""
+            "Le premier objectif de ce projet était d'intégrer l'interface du site avec de l'HTML et du CSS tout en étant capable de respecter parfaitement le contenu de la maquette.",
+            "Le deuxième objectif était de rendre l'interface responsive, en travaillant en premier lieu en desktop-first puis en améliorant l'apparence du site pour qu'il soit aussi lisible et agréable à regarder en étant sur tablette ou sur mobile.",
+            "Le troisième objectif de ce projet était d'apprendre à se servir des outils de développement notamment le gestionnaire de version : git et l'hebergeur de nos dépôts distants : github."
         ]
     },
     {
         "id": 1,
         "name": "Dynamiser le portfolio d'une architecte d'intérieur ",
         "language": [
-            "Java Script"
+            "/img/JS.png"
         ],
         "outil": [
             "Postman"
@@ -32,60 +34,59 @@
         "pictures": "/img/bluelCov.png",
         "github":"https://github.com/Nylophira/P3",
         "carrousel": [
-            "",
-            ""
+            "/img/bluel/bluel-ex-1.png",
+            "/img/bluel/bluel-ex-2.png"
         ],
         "description": [
-            "",
-            ""
+            "L'objectif principal de ce projet était de rendre dynamique un portfolio existant à l'aide du langage Java Script. L'exigence principale était que les changements opérés par l'utilisateur devait s'effectuer sans aucun chargement de page.",
+            "Un autre objectif était de permettre à la propriétaire du site de se connecter sur un espace administrateur propre afin de lui offrir la possibilité de mettre à jour les informations qu'elle souhaite."
         ]
     },
     {
         "id": 2,
         "name": "Mise en place du front-end d'un site de location immobilière",
         "language": [
-            "React",
-            "Sass"
+            "/img/React.png",
+            "/img/sass.png"
         ],
         "pictures": "/img/kasaCov.png",
         "github":"https://github.com/Nylophira/Projet_6",
         "carrousel": [
-            "",
-            ""
+            "/img/kasa/kasa-ex-1.png",
+            "/img/kasa/kasa-ex-2.png"
         ],
         "description": [
-            "",
-            ""
+            "L'objectif de ce projet était de réaliser l'ensemble de l'application immobilière avec les composants React et de mettre en place le style avec Sass tout en ayant un site responsive.",
+            "Une des contraintes était de mettre en place la navigation entre l'ensemble des pages de l'application. Pour cela, j'ai utilisé React Router."
         ]
     },
     {
         "id": 3,
         "name": "Mise en place d'un back-end sur un site de notation de livres",
         "language": [
-            "Java Script",
-            "Node.js"
+            "/img/JS.png",
+            "/img/node.png"
         ],
         "pictures": "/img/livreCov.png",
         "github":"https://github.com/Nylophira/P7_grimoire",
         "carrousel": [
-            "",
-            ""
+            "/img/grim/grim-ex-1.png",
+            "/img/grim/grim-ex-2.png"
         ],
         "description": [
-            "",
-            ""
+            "Ce projet exigeait de mettre en place toutes les fonctionnalités côté serveur dans une application React de notation de livre en passant par des requêtes de création, lecture, mis à jour et de suppression des données (modèle CRUD). Pour cela j'ai mis en place un serveur express avec Node.js et mongoDB en base de données.",
+            "La contrainte principale de ce projet était de réaliser une API REST sécurisée permettant notamment d'empêcher des utilisateurs mal-intentionnés à effectuer des requêtes dont ils n'ont pas les droits et de permettre aux utilisateurs d'enregistrer leurs données personnelles (mail, mot de passe) de manière sécurisée."
         ]
     },
     {
         "id": 4,
         "name": "Automatisation du suivi des qualifications des salariés",
         "language": [
-            "Deluge",
-            "Php",
-            "SQL"
+            "/img/deluge.jpg",
+            "/img/PHP.png",
+            "/img/SQL.png"
         ],
         "pictures": "/img/habCov.png",
-        "github":"",
         "carrousel": [
             "",
             ""
@@ -99,12 +100,11 @@
         "id": 5,
         "name": "Mise en place d'un logiciel de gestion de la sécurité au travail",
         "language": [
-            "Java Script",
-            "Php",
-            "SQL"
+            "/img/JS.png",
+            "/img/PHP.png",
+            "/img/SQL.png"
         ],
         "pictures": "/img/kalyCov.png",
-        "github":"",
         "carrousel": [
             "",
             ""

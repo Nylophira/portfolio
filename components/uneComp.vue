@@ -9,49 +9,47 @@ const props = defineProps ( {
 </script>
 
 <template>
-    <figure class="figure d-flex align-items-center flex-column  me-2">
-        <img class=' figure-img img-fluid rounded' :src="src" :alt="'icone '+nom">
-        <figcaption class="figure-caption text-center">{{ nom }}</figcaption>
+    <figure class="figure d-flex flex-column flex-wrap justify-content-center align-items-start my-0 h-100">
+        <img class='figure-img img-fluid rounded d-flex mb-1' :src="src" :alt="'icone '+nom">
+        <figcaption class="figure-caption fw-bold d-flex">{{ nom }}</figcaption>
     </figure>
     <div id="barreProgr">
         <div class="progress" role="progressbar" aria-label="Success example" :aria-valuenow="lvl" aria-valuemin="0" aria-valuemax="100">
             <div class="progress-bar" :style="{width: lvl}"></div>
         </div>
     </div>
-    
 </template>
 
 <style lang="scss">
 
-#comp {
-    .figure.d-flex.align-items-center {
 
-        margin-bottom: 0;
-        height: 100%;
+.figure.d-flex {
 
-        .figure-img.img-fluid {
-            //height: 30%;
-            width: auto;
-        }
+    width: 30%;
 
-        .figure-caption.text-center {
-            font-weight: 700;
-        }
+    .figure-img.img-fluid {
+        width: 30%;
     }
-    
 
-    #barreProgr {
-
-        width: 80%;
-
-        .progress-bar {
-            background-color: $jaune;
-        }
-
-
-    }
-    
 }
+    
+
+#barreProgr {
+
+    width: 95%;
+
+    .progress {
+        background-color: rgb(229, 219, 201);
+    }
+
+    .progress-bar {
+        background-color: $jaune;
+    }
+
+
+}
+    
+ 
 
 
 </style>
