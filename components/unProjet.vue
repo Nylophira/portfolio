@@ -10,19 +10,6 @@ const props = defineProps ({
     //valeur: Boolean
 })
 
-/*const open = ref(props.valeur);
- function openModal () {
-    open.value = !open.value;
-   emit('ouvert', {isOpen: open.value, name: nomm.value});
-   console.log(open.value); 
-}*/
-
-
-//partie si la modale est externe
-/* const nomm = ref(props.nom);
-const emit = defineEmits(['ouvert']);
-emit('ouvert', {name: nomm.value}); */
-
 
 ///partie si la modale est ici.
 const open = ref(false);
@@ -74,7 +61,7 @@ onUpdated(() => {
             <i class="bi bi-info-circle-fill"></i>
             <img :src="cov" class="card-img-top img-fluid" alt="illustration du projet">
             <div class="card-body d-flex align-items-end flex-column justify-content-between pb-0 pt-1">
-                <h2 class="card-title text-center mb-0">{{nom}}</h2>
+                <h2 class="card-title text-center w-100 mb-0">{{nom}}</h2>
                 <div id="contIlluLang" class="d-flex pe-2 pb-1">
                     <img v-for="source in langue" :src="source" alt="langage de développement" class="img-fluid me-1"> 
                 </div>
@@ -101,12 +88,10 @@ onUpdated(() => {
                                 </div>
                             </div>
                         </div>
-                       <!--  <button class="carousel-control-prev" type="button" data-bs-target="#carouselE" data-bs-slide="prev"> -->
                         <button @click="bougebouge('prev')" class="carousel-control-prev" type="button">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                           <!--  <button class="carousel-control-next" type="button" data-bs-target="#carouselE" data-bs-slide="next"> -->
                         <button @click="bougebouge('next')" class="carousel-control-next" type="button">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
@@ -146,6 +131,24 @@ onUpdated(() => {
                 object-fit: cover;
             }
         } */
+
+        #carouselE {
+
+            .carousel-control-next, .carousel-control-prev {
+                height: 70%;
+            }
+             .carousel-control-prev-icon {
+                background-image: url('/iconePrev.svg');
+                width: 70%;
+                height: 100%;
+            }
+
+            .carousel-control-next-icon {
+                background-image: url('/iconeNext.svg');
+                width: 70%;
+                height: 100%;
+            }
+        } 
     } 
 
     .modal-overlay {
