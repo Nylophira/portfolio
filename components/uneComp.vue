@@ -9,8 +9,8 @@ const props = defineProps ( {
 </script>
 
 <template>
-    <figure class="figure d-flex flex-column flex-wrap justify-content-center align-items-start my-0 h-100">
-        <img class='figure-img img-fluid rounded d-flex mb-1' :src="src" :alt="'icone '+nom">
+    <figure class="figure d-flex flex-row flex-wrap justify-content-start align-items-center my-0 h-100">
+        <img class='figure-img img-fluid rounded d-flex me-2 mb-0' :src="src" :alt="'icone '+nom">
         <figcaption class="figure-caption fw-bold d-flex">{{ nom }}</figcaption>
     </figure>
     <div id="barreProgr">

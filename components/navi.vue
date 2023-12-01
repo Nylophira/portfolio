@@ -26,6 +26,28 @@ watch(() => route.path, (newPath) => {
 function cvCont(qui) {
     actif.value = qui;
 } 
+
+
+
+//ouverture/fermeture des mentions légales
+//fermeture des mentions
+const props = defineProps({
+    ferme: Boolean
+})
+
+const emit = defineEmits(['change']);
+const ouvre = ref(props.ferme);
+
+
+
+const ouverture = () => {
+    
+    ouvre.value = true;
+    emit('change', ouvre.value)
+}
+
+
+
 </script>
 
 <template>
@@ -53,14 +75,20 @@ function cvCont(qui) {
             <li class="nav-item px-4">
                 <NuxtLink to="/contact" class="nav-link" :class="actif==='cont'? '':'non'" @click="cvCont('cont')">Contact</NuxtLink>
             </li>
+           <li class="nav-item px-4">
+                <a class="nav-link" @click="ouverture">Mentions Légales</a>
+            </li>
         </ul>
     </nav>
+
 </template>
 
 <style lang="scss">
 
 .entree {
     background-color: $rouge;
+    position: relative;
+    z-index: +2;
 
    .nav {
 

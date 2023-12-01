@@ -11,6 +11,7 @@
         ],
         "pictures": "/img/bookiCov.png",
         "github":"https://github.com/Nylophira/Projet2",
+        "pages":"https://nylophira.github.io/Projet2/",
         "carrousel": [
             "/img/booki/booki-ex-2.png",
             "/img/booki/booki-ex-1.png",
@@ -51,6 +52,7 @@
         ],
         "pictures": "/img/kasaCov.png",
         "github":"https://github.com/Nylophira/Projet_6",
+        "pages":"https://nylophira.github.io/Projet_6/",
         "carrousel": [
             "/img/kasa/kasa-ex-1.png",
             "/img/kasa/kasa-ex-2.png"
@@ -88,12 +90,12 @@
         ],
         "pictures": "/img/habCov.png",
         "carrousel": [
-            "",
-            ""
+            "/img/qualif/qualif-ex-1.png",
+            "/img/qualif/qualif-ex-2.png"
         ],
         "description": [
-            "",
-            ""
+            "L'objectif de ce projet était de faciliter la gestion du cycle de vie des qualifications des salariés (formation, recyclage, retrait d'habilitation, etc.) en automatisant en premier lieu ce qui pouvait l'être à l'aide du langage Deluge provenant de Zoho Creator.",
+            "Puis en deuxième lieu, d'offrir des interfaces faciles d'utilisation pour permettre aux utilisateurs de tracer tout événement particulier dans la vie professionnelle d'un salarié formé. La liaison avec le logiciel Zoho et les pages personnalisées ont été principalement réalisées avec Php."
         ]
     },
     {
@@ -106,12 +108,14 @@
         ],
         "pictures": "/img/kalyCov.png",
         "carrousel": [
-            "",
-            ""
+            "/img/kalyserpe/kaly-ex-1.png",
+            "/img/kalyserpe/kaly-ex-2.png",
+            "/img/kalyserpe/kaly-ex-3.png"
         ],
         "description": [
-            "",
-            ""
+            "L'objectif de ce projet était de créer une solution applicative pour le service Qualité Sécurité Environnement (QSE) de la société cliente. Ce projet était constitué autour de 3 axes principaux : le suivi des événements sécurité (accident, incident, presqu'accident), l'analyse de ces derniers avec la mise en place d'actions correctives et le suivi des visites terrains du service QSE.",
+            "Pour réaliser l'ensemble du suivi, il a fallu en premier lieu créer les tables de données. Pour cela j'ai utilisé MySQL workbench. Puis pour afficher l'ensemble des données, j'ai crée une API qui permet la liaison des données entre le serveur php et le front-end réalisé notamment en Java Script.",
+            "Ensuite des formulaires ont été crées pour permettre aux utilisateurs de saisir les informations. Afin de rendre l'utilisation plus agréable du logiciel, des éléments supplémentaires ont été mis en place comme des boutons de recherche, un suivi des modifications effectuées avec le moyen de revenir à une version antérieur, la possibilité d'ajouter des pièces jointes, etc. "
         ]
     }
 ]

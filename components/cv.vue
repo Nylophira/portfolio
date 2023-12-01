@@ -8,6 +8,7 @@
 <style lang="scss">
 
 .btn.btn-outline-danger {
+    background-color: white;
     color: $rouge;
     border-color: $rouge ;
     border-radius: 30px;

@@ -17,7 +17,7 @@ const  options = {
   },
   fullScreen: {
     enable: true,
-    zIndex: -1
+    //zIndex: -1
   },
   fpsLimit: 120,
   interactivity: {
@@ -111,5 +111,6 @@ const  options = {
   color: white;
   font-family: 'DM Serif Display';
 }
+
   
 </style>

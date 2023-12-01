@@ -4,30 +4,98 @@ const jaune = ref("#F6AA1C");
 const moitie = ref("50%");
 const zero = ref("0%");
 
+const mail = ref(null);
+const objetM = ref(null);
+const message = ref(null);
+
+
+const invalideM = ref(false);
+
+const envoyerEmail = async () => {
+
+    //try {
+        
+        //const response = await fetch('/api/sendMail', {
+         fetch('/api/sendMail', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                objet: objetM.value,
+                email: mail.value,
+                message: message.value,
+            }),
+        })
+        .then( nettoyage() )
+        .catch(  console.error('Erreur lors de l\'envoi de l\'e-mail :', error) )
+        
+
+        
+   //const data = await response.json();
+   //console.log(data.message);
+  //} catch (error) {
+    //console.error('Erreur lors de l\'envoi de l\'e-mail :', error);
+  //} 
+}
+
+//verification des champs
+function check (data, e) {
+    const cibleID = e.target.id;
+    const cible = document.getElementById(cibleID);
+    
+    if ((data === null || data == "")) {
+        
+        cible.classList.add("is-invalid"); 
+
+    } else {
+    
+       cible.classList.remove("is-invalid");
+
+    }
+}
+
+function nettoyage () {
+    const contForm = document.getElementById("monForm").innerHTML = "";
+    invalideM.value = true;
+}   
+
 </script>
 <template>
     <decor :couleur="jaune" :taille="zero" :larg="moitie"/>
-    <div class="row">
+    <div class="row d-flex align-items-center flex-column w-100" id="contContact" :class="invalideM ? 'justify-content-center':'justify-content-around'">
+        <h2 class="text-center p-3" v-if="invalideM"> Message envoyé, merci !</h2>
         <div class="row">
-            <div class="col">
+            <div class="col d-flex flex-column align-items-center">
                 <Cv/>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
-                <form>
-                    <h2>N'hésitez pas à me contacter via ce formulaire</h2>
-                    <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                        <label for="floatingInput">Adresse mail</label>
+        <div class="row" id="contFormC">
+            <div id="monForm" class="col h-100">
+                    <form  class="p-5 d-flex align-items-center flex-column" @submit.prevent="envoyerEmail">
+                        <!-- <h2 class="fs-4 pb-3">Formulaire de contact</h2> -->
+                    <div class="w-100 d-flex flex-row mb-3 justify-content-between">
+                        <div class="form-floating">
+                            <input v-model="mail" type="email" class="form-control" id="mail" placeholder="name@example.com" name="mail" required @blur="check(mail, $event)">
+                            <label for="mail">Adresse mail</label>
+                            <div class="invalid-feedback">
+                                S'il vous plait, veuillez écrire une adresse mail valide.
+                            </div>
+                        </div>
+                        <div class="form-floating">
+                            <input v-model="objetM" type="text" class="form-control" placeholder="Objet" id="objetM" name="objet" required @blur="check(objetM, $event)">
+                            <label for="objetM">Objet de votre message</label>
+                            <div class="invalid-feedback">
+                                S'il vous plait, veuillez écrire l'objet de votre message.
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-floating">
-                        <input type="text" class="form-control" placeholder="Objet" id="floatingTextarea">
-                        <label for="floatingInput">Objet de votre message</label>
-                    </div>
-                    <div class="form-floating">
-                        <textarea class="form-control" placeholder="Ecrire ici" id="floatingTextarea"></textarea>
-                        <label for="floatingTextarea">Votre message</label>
+                    <div class="form-floating mb-3 w-100">
+                        <textarea v-model="message" class="form-control" placeholder="Ecrire ici" id="message" name="message" required @blur="check(message, $event)"></textarea>
+                        <label for="message">Votre message</label>
+                        <div class="invalid-feedback">
+                                S'il vous plait, veuillez écrire votre message.
+                            </div>
                     </div>
                     <!-- <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -36,7 +104,7 @@ const zero = ref("0%");
                         </label>
                     </div> -->
                     <div>
-                        <button class="btn btn-primary" type="submit">Envoyer le formulaire</button>
+                        <button class="btn btn-outline fs-5 px-4" type="submit">Envoyer le formulaire</button>
                     </div>
                 </form>
             </div>
@@ -44,3 +112,55 @@ const zero = ref("0%");
     </div>
     
 </template>
+
+<style lang="scss">
+
+#contContact {
+    height: 90%;
+
+    #contFormC  {
+
+        width: 70%;
+       
+
+        .col.h-100 {
+
+            form {
+                background-color: white;
+                border: $jaune solid 1px;
+                border-radius: 20px;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+            }
+            
+             .w-100.d-flex.flex-row.mb-3 .form-floating {
+                width: 40%;
+
+                input {
+                    border: $jaune 1px solid;
+                }
+                
+            }
+
+        }
+
+        .form-floating textarea {
+            height: 150px;
+            border: $jaune 1px solid;
+        }
+
+        .btn.btn-outline {
+            color: $jaune;
+            border-color: $jaune ;
+            border-radius: 30px;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .btn.btn-outline:hover {
+            color: white;
+            background-color: $jaune;
+        }
+    }
+}
+
+</style>

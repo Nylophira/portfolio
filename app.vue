@@ -14,19 +14,33 @@ useHead({
   ] */
 })
 
+const ferme = ref(false);
 
+function openML () {
+    ferme.value = !ferme.value;
+}
 
 </script>
 
 <template>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-   <Navi />
+   <Navi @change="(x) => ferme = x" :ferme="ferme"/>
   <div class="container d-flex justify-content-center align-items-center">
+    <div v-if="ferme" @click="openML" class="modal-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+    <div v-if="ferme" class="modal translate-middle top-50 start-50" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title ms-3 ps-1 border-danger border-start border-2">Mentions Légales</h3>
+                </div>
+            </div>
+        </div>
+    </div>
     <NuxtPage />
   </div>
 </template>
 
-<style>
+<style lang="scss">
 
 /* fichiers ayant mon thème couleur */
 @import './assets/theme.css';
@@ -38,12 +52,28 @@ useHead({
 
 #__nuxt {
   height: 100vh;
+  background-color: #f1f1f1bb;
 }
 
 .container.d-flex.justify-content-center.align-items-center {
   height: 93%;
 
 }
- 
+
+/******* généralité ******/
+img {
+  object-fit: cover;
+}
+
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.modal {
+  display: flex;
+  width: max-content;
+  height: max-content;
+}
 
 </style>

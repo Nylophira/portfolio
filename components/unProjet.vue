@@ -5,6 +5,7 @@ const props = defineProps ({
     langue: Array,
     cov: String,
     git: String,
+    pages: String,
     carrousel: Array,
     descrip: Array
     //valeur: Boolean
@@ -62,7 +63,7 @@ onUpdated(() => {
             <img :src="cov" class="card-img-top img-fluid" alt="illustration du projet">
             <div class="card-body d-flex align-items-end flex-column justify-content-between pb-0 pt-1">
                 <h2 class="card-title text-center w-100 mb-0">{{nom}}</h2>
-                <div id="contIlluLang" class="d-flex pe-2 pb-1">
+                <div id="contIlluLang" class="d-flex w-50 pb-1 justify-content-end">
                     <img v-for="source in langue" :src="source" alt="langage de développement" class="img-fluid me-1"> 
                 </div>
             </div>
@@ -73,7 +74,13 @@ onUpdated(() => {
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <a v-if="git" :href="git" class="d-flex"><i class="bi bi-github"></i></a>
+                        <div class="d-flex flex-column align-items-center h-100">
+                            <a v-if="git" :href="git" class="d-flex"><i class="bi bi-github"></i></a>
+                                <a v-if="pages" :href="pages" class="position-relative d-flex">
+                                    <i class="bi bi-laptop"></i>
+                                    <i class="bi bi-box-arrow-up-right position-absolute top-50 translate-middle-y   translate-middle-x w-50"></i>
+                                </a>
+                        </div>
                         <!--  fonctionne pas la couleur du border.. -->
                         <h3 class="modal-title ms-3 ps-1 border-danger border-start border-2">{{ nom }}</h3>
                         <button @click="openModal()" type="button" class="btn-close align-self-start" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -108,10 +115,9 @@ onUpdated(() => {
 #contProjets {
 
     .modal {
-        display: flex;
+       /*  display: flex;
         width: max-content;
-        //height: max-content;
-        height: 90%;
+        height: max-content; */
 
         .modal-header {
             
@@ -120,9 +126,20 @@ onUpdated(() => {
             } */
             
             .bi.bi-github {
+                font-size: 25px;
+                color: black
+            };
+
+            .bi.bi-laptop {
                 font-size: 30px;
                 color: black
             };
+
+            .bi.bi-box-arrow-up-right {
+                font-size: 10px;
+                color: $rFonce;
+                left: 35%;
+            }
         }
 
          /* #carouselE {
@@ -151,10 +168,6 @@ onUpdated(() => {
         } 
     } 
 
-    .modal-overlay {
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-    }
 
     .col-sm-4.mb-2.mb-sm-0.g-3 {
         .card {

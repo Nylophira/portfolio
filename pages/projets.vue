@@ -13,7 +13,7 @@ import projet from "../data/projet.json";
     <decor :couleur="rFonce" :taille="moitie" :larg="quart"/>
     <div class="row d-flex align-items-center" id="contProjets">
         <div class="col-lg-4 col-sm-4 mb-2 mb-sm-0 g-3 d-flex h-50" v-for="values in projet" :key="values.id">
-               <UnProjet :nom="values.name" :langue="values.language" :cov="values.pictures" :carrousel="values.carrousel" :descrip="values.description" :git="values.github"/>
+               <UnProjet :nom="values.name" :langue="values.language" :cov="values.pictures" :carrousel="values.carrousel" :descrip="values.description" :git="values.github" :pages="values.pages"/>
         </div>
     </div>
     

@@ -9,7 +9,7 @@ const quart = ref("25%");
     <decor :couleur="jaune" :taille="moitie" :larg="quart"/>
     <div class="row d-flex align-items-center">
         <div class="col">
-           <img src="/img/Image1.jpg" alt="Avatar d'une femme à un poste de travail derrière un écran d'ordinateur. Elle porte un casque de chantier et des éléments de développpement informatique sont en arrière plan"  class="img-fluid w-100">
+           <img src="/img/Image1.png" alt="Avatar d'une femme à un poste de travail derrière un écran d'ordinateur. Elle porte un casque de chantier et des éléments de développpement informatique sont en arrière plan"  class="img-fluid w-100">
         </div>
         <div class="col-8 px-5">
             <h2>Présentation</h2>
