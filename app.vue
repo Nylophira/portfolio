@@ -32,7 +32,25 @@ function openML () {
             <div class="modal-content">
                 <div class="modal-header">
                   <h3 class="modal-title ms-3 ps-1 border-danger border-start border-2">Mentions Légales</h3>
+                  <button @click="openML()" type="button" class="btn-close align-self-start" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <div class="modal-body">
+                  <div>
+                    <p>Ce site web est édité par Amandine Millet.</p>
+                      <ul class="list-group">
+                      <li class="list-group-item fw-bold">Ses coordonnées sont :</li>
+                      <li class="list-group-item">218 allée des abeilles 84200 Carpentras</li>
+                      <li class="list-group-item">amandine_millet@live.fr</li>
+                      </ul>
+                    <div>
+                      <p>L'hébergement est : </p>
+                    </div>
+                  </div> 
+                </div>
+                <div class="modal-footer">
+                  <p>copyright © 2023</p>
+                </div>
+
             </div>
         </div>
     </div>

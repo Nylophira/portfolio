@@ -81,11 +81,9 @@ onUpdated(() => {
                                     <i class="bi bi-box-arrow-up-right position-absolute top-50 translate-middle-y   translate-middle-x w-50"></i>
                                 </a>
                         </div>
-                        <!--  fonctionne pas la couleur du border.. -->
                         <h3 class="modal-title ms-3 ps-1 border-danger border-start border-2">{{ nom }}</h3>
                         <button @click="openModal()" type="button" class="btn-close align-self-start" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                   <!--  fonctionne pas le slide fade... -->
                     <div id="carouselE" class="carousel slide carousel-fade">
                         <div class="carousel-inner">
                             <div class="carousel-item" v-for="(values, index) in carrousel" :key="index" :id="index">

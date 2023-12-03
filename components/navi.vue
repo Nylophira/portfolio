@@ -23,9 +23,9 @@ watch(() => route.path, (newPath) => {
 });
 
 //soulignement du cv ou du contact
-function cvCont(qui) {
+/* function cvCont(qui) {
     actif.value = qui;
-} 
+}  */
 
 
 
@@ -69,11 +69,11 @@ const ouverture = () => {
             <li class="nav-item px-4">
                 <NuxtLink to="/competences" class="nav-link">Compétences</NuxtLink>
             </li>
-            <li class="nav-item px-4">
+           <!--  <li class="nav-item px-4">
                 <NuxtLink to="/contact" class="nav-link" :class="actif==='CV'? '':'non'" @click="cvCont('CV')">CV</NuxtLink>
-            </li>
+            </li> -->
             <li class="nav-item px-4">
-                <NuxtLink to="/contact" class="nav-link" :class="actif==='cont'? '':'non'" @click="cvCont('cont')">Contact</NuxtLink>
+                <NuxtLink to="/contact" class="nav-link">Contact</NuxtLink>
             </li>
            <li class="nav-item px-4">
                 <a class="nav-link" @click="ouverture">Mentions Légales</a>
