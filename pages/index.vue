@@ -93,6 +93,7 @@ const  options = {
 <template>
     <!-- :particlesLoaded="particlesLoaded" -->
     <div id="app">
+      <NuxtLink class="d-lg-none position-absolute top-0 start-0 w-100 h-100"  to="/pres"></NuxtLink>
         <vue-particles
             id="tsparticles"
             :particlesInit="particlesInit"
@@ -110,6 +111,10 @@ const  options = {
 #app .text-left {
   color: white;
   font-family: 'DM Serif Display';
+}
+
+#app a.d-lg-none.position-absolute.top-0.start-0.w-100.h-100 {
+  z-index:100;
 }
 
   

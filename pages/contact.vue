@@ -72,10 +72,10 @@ function nettoyage () {
         </div>
         <div class="row" id="contFormC">
             <div id="monForm" class="col h-100">
-                    <form  class="p-5 d-flex align-items-center flex-column" @submit.prevent="envoyerEmail">
+                    <form  class="p-3 p-sm-5 d-flex align-items-center flex-column" @submit.prevent="envoyerEmail">
                         <!-- <h2 class="fs-4 pb-3">Formulaire de contact</h2> -->
-                    <div class="w-100 d-flex flex-row mb-3 justify-content-between">
-                        <div class="form-floating">
+                    <div class="w-100 d-flex flex-column flex-md-row mb-3 justify-content-between" id="champMailOb">
+                        <div class="form-floating my-md-0 my-3">
                             <input v-model="mail" type="email" class="form-control" id="mail" placeholder="name@example.com" name="mail" required @blur="check(mail, $event)">
                             <label for="mail">Adresse mail</label>
                             <div class="invalid-feedback">
@@ -104,7 +104,7 @@ function nettoyage () {
                         </label>
                     </div> -->
                     <div>
-                        <button class="btn btn-outline fs-5 px-4" type="submit">Envoyer le formulaire</button>
+                        <button class="btn btn-outline px-4" type="submit">Envoyer le formulaire</button>
                     </div>
                 </form>
             </div>
@@ -133,7 +133,7 @@ function nettoyage () {
 
             }
             
-             .w-100.d-flex.flex-row.mb-3 .form-floating {
+            #champMailOb .form-floating {
                 width: 40%;
 
                 input {
@@ -154,6 +154,7 @@ function nettoyage () {
             border-color: $jaune ;
             border-radius: 30px;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            font-size: 20px;
         }
 
         .btn.btn-outline:hover {
@@ -162,5 +163,25 @@ function nettoyage () {
         }
     }
 }
+
+@media (max-width: 992px) {
+    #contContact #contFormC {
+    
+        width: 80%;
+
+        .col.h-100  form #champMailOb .form-floating {
+            width: 100%;
+        }
+    
+    }
+}
+
+@media (max-width: 576px) {
+    #contContact #contFormC .btn.btn-outline {
+            font-size: 16px;
+        }
+    
+}
+
 
 </style>

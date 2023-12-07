@@ -63,25 +63,20 @@ const menuO = () => {
     emit('update:menu', show.value); 
 } 
 
-const clickMobile = () => {
-    if (show.value) {
-        show.value = '';
-        emit('update:menu', show.value); 
-    }
-}
-
 watch(() => props.menu, (newValue) => {
       show.value = newValue;
     });
+
+    //console.log(show);
 
 
 </script>
 
 <template>
-    <nav v-if="!((entree=='entree')&&(show=='show'))" :class="(entree=='entree' ? 'entree d-none d-lg-flex':'')" class="px-3 pt-1 navbar navbar-expand-lg">
+    <nav v-if="!((entree=='entree')&(show=='show'))" :class=entree class="px-3 pt-0 navbar navbar-expand-lg">
         <div class="container-fluid">
+             <p>{{ props.menu }} - {{ show }}</p> 
             <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-            <!-- il va falloir trouver un truc pour que quand on clique ça enlève show -->
             <button @click=menuO class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -94,28 +89,29 @@ watch(() => props.menu, (newValue) => {
                             </svg>
                         </NuxtLink>
                     </li>
-                    <li @click="clickMobile" class="nav-item px-4" :class="show ? '':'ms-auto'">
+                    <li class="nav-item px-4" :class="show ? '':'ms-auto'">
                         <NuxtLink to="/pres" class="nav-link" >Présentation</NuxtLink>
                     </li>
-                    <li @click="clickMobile" class="nav-item px-4">
+                    <li class="nav-item px-4">
                         <NuxtLink to="/projets" class="nav-link" >Projets</NuxtLink>
                     </li>
-                    <li @click="clickMobile" class="nav-item px-4">
+                    <li class="nav-item px-4">
                         <NuxtLink to="/competences" class="nav-link">Compétences</NuxtLink>
                     </li>
                 <!--  <li class="nav-item px-4">
                         <NuxtLink to="/contact" class="nav-link" :class="actif==='CV'? '':'non'" @click="cvCont('CV')">CV</NuxtLink>
                     </li> -->
-                    <li @click="clickMobile" class="nav-item px-4">
+                    <li class="nav-item px-4">
                         <NuxtLink to="/contact" class="nav-link">Contact</NuxtLink>
                     </li>
-                    <li class="nav-item px-4">
+                <li class="nav-item px-4">
                         <a class="nav-link" @click="ouverture">Mentions Légales</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    <slot />
 </template>
 
 <style lang="scss">
@@ -193,7 +189,7 @@ watch(() => props.menu, (newValue) => {
     
 }
 
-/* .entree {
+.entree {
 
     .collapse.navbar-collapse.show {
 
@@ -202,7 +198,7 @@ watch(() => props.menu, (newValue) => {
     }
     
 }
-} */
+}
 
 
 

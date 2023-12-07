@@ -58,11 +58,11 @@ onUpdated(() => {
 
 <template>
         <!----- partie card ------->
-        <div @click="openModal()" class="card h-100 w-100 d-flex">
+        <div @click="openModal()" class="card h-100 w-100 d-flex"> 
             <i class="bi bi-info-circle-fill"></i>
             <img :src="cov" class="card-img-top img-fluid" alt="illustration du projet">
             <div class="card-body d-flex align-items-end flex-column justify-content-between pb-0 pt-1">
-                <h2 class="card-title text-center w-100 mb-0">{{nom}}</h2>
+                <h2 class="card-title text-center w-100 mb-0 fs-6">{{nom}}</h2>
                 <div id="contIlluLang" class="d-flex w-50 pb-1 justify-content-end">
                     <img v-for="source in langue" :src="source" alt="langage de développement" class="img-fluid me-1"> 
                 </div>
@@ -81,7 +81,7 @@ onUpdated(() => {
                                     <i class="bi bi-box-arrow-up-right position-absolute top-50 translate-middle-y   translate-middle-x w-50"></i>
                                 </a>
                         </div>
-                        <h3 class="modal-title ms-3 ps-1 border-danger border-start border-2">{{ nom }}</h3>
+                        <h3 class="modal-title ms-3 ps-1 border-danger border-start border-2 fs-5">{{ nom }}</h3>
                         <button @click="openModal()" type="button" class="btn-close align-self-start" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div id="carouselE" class="carousel slide carousel-fade">
@@ -167,7 +167,9 @@ onUpdated(() => {
     } 
 
 
-    .col-sm-4.mb-2.mb-sm-0.g-3 {
+    #myCard {
+
+        height: 45%;
         .card {
             box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.10);
             border-radius: 30px;
@@ -204,7 +206,7 @@ onUpdated(() => {
     }
 
    /*  A changer pour l'animation */
-    .col-sm-4.mb-2.mb-sm-0.g-3 .card:hover {
+    #myCard .card:hover {
 
          .bi.bi-info-circle-fill {
             display: flex;
@@ -225,6 +227,15 @@ onUpdated(() => {
             height: 0%;
         }
     }
+}
+
+@media (max-width: 575px) {
+    #contProjets {
+        .modal {
+            width: 75%;
+        }
+    
+  }
 }
 
 

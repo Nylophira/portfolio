@@ -1,7 +1,7 @@
 <script setup lang="ts">
  
 //const runtimeConfig = useRuntimeConfig()
-//const route = useRoute()
+
 
 //Mon head
 useHead({
@@ -14,18 +14,59 @@ useHead({
   ] */
 })
 
+
+//valeurs pour la modale "mentions légales"
 const ferme = ref(false);
 
 function openML () {
     ferme.value = !ferme.value;
 }
 
+//valeurs du conteneur gris sur l'ouverture du menu burger sur tablette / mobile
+const show = ref('');
+
+function changechange () {
+  if (show.value) {
+        show.value = '';
+    } else {
+        show.value = 'show';
+    }
+ }
+
+//apparition du menu ou non selon l'endroit (sur tablette/mobile)
+const route = useRoute()
+
+const entree = ref(false);
+//pour l'actualisation
+if (route.path == "/") {
+  entree.value = true;
+  //show.value = 'show';
+} else {
+    entree.value = false;
+}
+
+//en cas de changement de page
+watch(() => route.path, (newPath) => {
+    if (newPath === '/') {
+        entree.value = true;
+        //show.value = 'show';
+    } else {
+        entree.value = false;
+        //show.value = '';
+       
+    }
+});
+
+//faire une variable genre classe qui définit si le navi il est display:none ou non lorsqu'on est sur entrée (et uniquement dans ce cas)
+ console.log(show);
+
 </script>
 
 <template>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-   <Navi @change="(x) => ferme = x" :ferme="ferme"/>
+  <Navi  @change="(x) => ferme = x" :ferme="ferme" :menu="show" @update:menu="(y) => show = y"/>
   <div class="container d-flex justify-content-center align-items-center">
+    <!-- Partie modale -->
     <div v-if="ferme" @click="openML" class="modal-overlay position-absolute top-0 start-0 w-100 h-100"></div>
     <div v-if="ferme" class="modal translate-middle top-50 start-50" tabindex="-1">
         <div class="modal-dialog">
@@ -50,12 +91,17 @@ function openML () {
                 <div class="modal-footer">
                   <p>copyright © 2023</p>
                 </div>
-
             </div>
         </div>
     </div>
-    <NuxtPage />
-  </div>
+    <div v-if="((show=='show')&&(entree==false))" @click="changechange" class="modal-overlay position-absolute top-0 start-0 w-100 h-100" id="couvMenu"></div>
+   <!-- <transition name="page" mode="out-in"><NuxtPage key="pages"/></transition> -->
+   <!-- <NuxtLayout @change="(x) => ferme = x" :ferme="ferme" :menu="show" @update:menu="(y) => show = y">
+    <div class="container d-flex justify-content-center align-items-center"> -->
+    <NuxtPage/>
+    <!-- </div>
+  </NuxtLayout> -->
+</div>
 </template>
 
 <style lang="scss">
@@ -67,6 +113,10 @@ function openML () {
 @import 'bootstrap/dist/css/bootstrap.min.css';
 /* @import 'bootstrap-icons/font/bootstrap-icons.css' */
 
+
+#couvMenu {
+  z-index:1;
+}
 
 #__nuxt {
   height: 100vh;
@@ -93,5 +143,6 @@ img {
   width: max-content;
   height: max-content;
 }
+
 
 </style>

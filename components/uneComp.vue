@@ -9,9 +9,9 @@ const props = defineProps ( {
 </script>
 
 <template>
-    <figure class="figure d-flex flex-row flex-wrap justify-content-start align-items-center my-0 h-100">
-        <img class='figure-img img-fluid rounded d-flex me-2 mb-0' :src="src" :alt="'icone '+nom">
-        <figcaption class="figure-caption fw-bold d-flex">{{ nom }}</figcaption>
+    <figure class="figure d-flex flex-lg-row flex-column flex-lg-wrap flex-nowrap justify-content-lg-start justify-content-center align-items-center my-0 h-100">
+        <img class='figure-img img-fluid rounded d-flex me-lg-2 mb-0' :src="src" :alt="'icone '+nom">
+        <figcaption class="figure-caption text-center fw-bold d-flex">{{ nom }}</figcaption>
     </figure>
     <div id="barreProgr">
         <div class="progress" role="progressbar" aria-label="Success example" :aria-valuenow="lvl" aria-valuemin="0" aria-valuemax="100">
@@ -36,7 +36,7 @@ const props = defineProps ( {
 
 #barreProgr {
 
-    width: 95%;
+    width: 80%;
 
     .progress {
         background-color: rgb(229, 219, 201);
@@ -50,6 +50,33 @@ const props = defineProps ( {
 }
     
  
+@media (max-width: 720px) {
+   .figure.d-flex {
+
+
+        .figure-img.img-fluid {
+            width: 50%;
+        } 
+    }
+
+    #barreProgr {
+
+        width: 70%;
+    }
+}
+
+@media (max-width: 540px) {
+
+    .figure.d-flex {
+       width: 40%;
+       font-size: 14px;
+    }
+
+    #barreProgr {
+
+        width: 60%;
+    }
+}
 
 
 </style>
