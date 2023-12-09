@@ -43,15 +43,25 @@ const envoyerEmail = async () => {
 function check (data, e) {
     const cibleID = e.target.id;
     const cible = document.getElementById(cibleID);
-    
-    if ((data === null || data == "")) {
+
+    if (cibleID == "mail") {
+         //console.log("coucou !");
+         let regex = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+         if (regex.test(data)) {
+            cible.classList.add("is-valid"); 
+            cible.classList.remove("is-invalid");
+         } else {
+            cible.classList.add("is-invalid"); 
+            cible.classList.remove("is-valid"); 
+         }
+    } else if ((data === null || data == "")) {
         
         cible.classList.add("is-invalid"); 
-
+        cible.classList.remove("is-valid"); 
+        
     } else {
-    
-       cible.classList.remove("is-invalid");
-
+         cible.classList.add("is-valid"); 
+        cible.classList.remove("is-invalid");
     }
 }
 
@@ -62,6 +72,7 @@ function nettoyage () {
 
 </script>
 <template>
+    <div class="container d-flex justify-content-center align-items-center h-100">
     <decor :couleur="jaune" :taille="zero" :larg="moitie"/>
     <div class="row d-flex align-items-center flex-column w-100" id="contContact" :class="invalideM ? 'justify-content-center':'justify-content-around'">
         <h2 class="text-center p-3" v-if="invalideM"> Message envoyé, merci !</h2>
@@ -81,12 +92,18 @@ function nettoyage () {
                             <div class="invalid-feedback">
                                 S'il vous plait, veuillez écrire une adresse mail valide.
                             </div>
+                            <div class="valid-feedback">
+                                Cela semble être bon.
+                            </div>
                         </div>
                         <div class="form-floating">
                             <input v-model="objetM" type="text" class="form-control" placeholder="Objet" id="objetM" name="objet" required @blur="check(objetM, $event)">
                             <label for="objetM">Objet de votre message</label>
                             <div class="invalid-feedback">
                                 S'il vous plait, veuillez écrire l'objet de votre message.
+                            </div>
+                            <div class="valid-feedback">
+                                Merci !
                             </div>
                         </div>
                     </div>
@@ -95,7 +112,10 @@ function nettoyage () {
                         <label for="message">Votre message</label>
                         <div class="invalid-feedback">
                                 S'il vous plait, veuillez écrire votre message.
-                            </div>
+                        </div>
+                        <div class="valid-feedback">
+                                Merci !
+                        </div>
                     </div>
                     <!-- <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -110,6 +130,7 @@ function nettoyage () {
             </div>
         </div>
     </div>
+</div>
     
 </template>
 
@@ -160,6 +181,10 @@ function nettoyage () {
         .btn.btn-outline:hover {
             color: white;
             background-color: $jaune;
+        }
+
+        .form-floating label::after {
+            position: relative;
         }
     }
 }

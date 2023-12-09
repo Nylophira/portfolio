@@ -99,7 +99,7 @@ const  options = {
         <div class="col d-flex flex-column align-items-center">
             <div class="d-flex flex-column align-items-center mb-5">
                 <h1 class="fw-bold">404</h1>  
-                <h2>Oups ! La page que vous demandez n'existe pas.</h2>
+                <h2 class="text-center">Oups ! La page que vous demandez n'existe pas.</h2>
             </div>
             <div class="d-flex flex-column align-items-end">
                 <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-question-lg" viewBox="0 0 16 16">

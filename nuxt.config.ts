@@ -11,10 +11,10 @@ export default defineNuxtConfig({
       }
     }
   },
-  /* app: {
+   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     //layoutTransition: { name: 'slide', mode: 'out-in'}
-  }  *//*,
+  } /*,
    plugins: [
     {
       src: './plugins/vue3-particles.ts',

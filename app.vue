@@ -57,15 +57,13 @@ watch(() => route.path, (newPath) => {
     }
 });
 
-//faire une variable genre classe qui définit si le navi il est display:none ou non lorsqu'on est sur entrée (et uniquement dans ce cas)
- console.log(show);
-
 </script>
 
 <template>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   <Navi  @change="(x) => ferme = x" :ferme="ferme" :menu="show" @update:menu="(y) => show = y"/>
-  <div class="container d-flex justify-content-center align-items-center">
+  <div class="container d-flex justify-content-center align-items-center" id="toutCont">
+    <!-- <div class="container d-flex"> -->
     <!-- Partie modale -->
     <div v-if="ferme" @click="openML" class="modal-overlay position-absolute top-0 start-0 w-100 h-100"></div>
     <div v-if="ferme" class="modal translate-middle top-50 start-50" tabindex="-1">
@@ -81,7 +79,7 @@ watch(() => route.path, (newPath) => {
                       <ul class="list-group">
                       <li class="list-group-item fw-bold">Ses coordonnées sont :</li>
                       <li class="list-group-item">218 allée des abeilles 84200 Carpentras</li>
-                      <li class="list-group-item">amandine_millet@live.fr</li>
+                      <li class="list-group-item">amandine_millet[at]live.fr</li>
                       </ul>
                     <div>
                       <p>L'hébergement est : </p>
@@ -98,7 +96,8 @@ watch(() => route.path, (newPath) => {
    <!-- <transition name="page" mode="out-in"><NuxtPage key="pages"/></transition> -->
    <!-- <NuxtLayout @change="(x) => ferme = x" :ferme="ferme" :menu="show" @update:menu="(y) => show = y">
     <div class="container d-flex justify-content-center align-items-center"> -->
-    <NuxtPage/>
+<!--    <Transition><div><NuxtPage/></div></Transition> -->
+ <NuxtPage/>
     <!-- </div>
   </NuxtLayout> -->
 </div>
@@ -113,6 +112,26 @@ watch(() => route.path, (newPath) => {
 @import 'bootstrap/dist/css/bootstrap.min.css';
 /* @import 'bootstrap-icons/font/bootstrap-icons.css' */
 
+/* .v-enter-active,
+.v-leave-active {
+  transition: all 0.4s;
+}
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
+} */
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.4s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
+}
+
 
 #couvMenu {
   z-index:1;
@@ -123,7 +142,7 @@ watch(() => route.path, (newPath) => {
   background-color: #f1f1f1bb;
 }
 
-.container.d-flex.justify-content-center.align-items-center {
+#toutCont {
   height: 93%;
 
 }

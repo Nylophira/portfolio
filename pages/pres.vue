@@ -5,7 +5,9 @@ const moitie = ref("50%");
 const quart = ref("25%");
 
 </script>
+
 <template>
+ <div class="container d-flex justify-content-center align-items-center h-100">
     <decor :couleur="jaune" :taille="moitie" :larg="quart"/>
     <div class="row d-flex align-items-center flex-lg-row flex-column">
         <div class="col-6 col-lg py-3 py-lg-0">
@@ -16,7 +18,7 @@ const quart = ref("25%");
             <p class="px-2 px-lg-0">Après presque 10 années d'expérience dans le domaine de la prévention des risques professionnels, mon désir de relever de nouveaux défis m'a conduit à entreprendre une reconversion dans le développement web, un domaine qui m'a toujours intéressée. <br> Ma soif d'apprendre ne m'ayant jamais quitté, je suis actuellement en quête de nouvelles opportunités professionnelles qui me permettront de continuer à élargir mes horizons dans le développement.</p>
         </div>
     </div>
-
+</div>
 </template>
 
 <style lang="scss">
