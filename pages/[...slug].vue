@@ -88,9 +88,17 @@ const  options = {
   detectRetina: true
 }
 
+//Suppression de l'animation sur cette page là
+definePageMeta({
+  pageTransition: false
+})
+
+
+
 </script>
 
 <template>
+  <div>
     <vue-particles
             id="tsparticles"
             :particlesInit="particlesInit"
@@ -111,7 +119,7 @@ const  options = {
             </div>
         </div>
     </div>  
-            
+  </div>          
     
 </template>
 

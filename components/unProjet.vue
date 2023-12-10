@@ -69,8 +69,9 @@ onUpdated(() => {
             </div>
         </div>
         <!----- partie modale ------->
-       <div v-if="open" class="modal-overlay position-absolute top-0 start-0 w-100 h-100" @click="openModal()"></div>
-       <div v-if="open" class="modal translate-middle top-50 start-50" tabindex="-1">
+        <div v-if="open" class="modal-overlay position-absolute top-0 start-0 w-100 h-100" @click="openModal()"></div>
+       <Transition name="fade">
+        <div v-if="open" class="modal translate-middle top-50 start-50" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -104,11 +105,23 @@ onUpdated(() => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div></Transition>
         
 </template>
 
 <style lang="scss">
+
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.8s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
 
 #contProjets {
 
