@@ -28,6 +28,8 @@ function clikPhoto (elem) {
    
 }
 
+
+
 </script>
 
 <template>
@@ -37,7 +39,7 @@ function clikPhoto (elem) {
         <div class="row d-flex h-100 w-100 align-items-center">
             <div  @click="clikPhoto('natif')" class="col position-relative d-flex">
                 <div id="natif" class="w-100 d-flex justify-content-center" v-if="voirNatif==false">
-                    <h3 class="position-absolute mt-5 fw-bold text-center px-1">Langage de développement</h3>
+                    <h3 class="position-absolute mt-5 fw-bold text-center px-3">Langage de développement</h3>
                     <img src="/img/php-illus2.jpg" alt="Personne tenant un autocollant php"  class="img-fluid w-100 h-100 object-fit-cover">
                 </div>
                 <div v-else  class="d-flex flex-column flex-wrap justify-content-between w-100">
@@ -49,10 +51,9 @@ function clikPhoto (elem) {
             <div class="col">
                 <!-- Partie framework -->
                <div class="row h-50 pb-3">
-                    <div  @click="clikPhoto('fram')" class="col h-100 position-relative d-flex justify-content-center">
-                   <!--  <Transition> -->
+                    <div  @click="clikPhoto('fram')" class="col h-100 position-relative d-flex justify-content-center" id='test'>
                     <div id="framework" class="w-100 d-flex justify-content-center" v-if="voirFram==false">
-                            <h3 class="position-absolute mt-5 fw-bold text-center px-1">Framework et librairie</h3>
+                            <h3 class="position-absolute mt-5 fw-bold text-center px-3">Framework et librairie</h3>
                             <img src="/img/react-illus.jpg" alt="Personne tenant un autocollant react"  class="img-fluid w-100 object-fit-cover">
                         </div>
                         <div  v-else class="d-flex flex-column flex-wrap justify-content-around w-100">
@@ -60,14 +61,13 @@ function clikPhoto (elem) {
                                 <UneComp :nom= "values.name" :lvl="values.lvl+'%'" :src="values.img"/>
                             </div>
                         </div>
-                    <!-- </Transition> -->
                     </div>
                </div>
                <!-- Partie ENT -->
                <div class="row h-50">
                 <div  @click="clikPhoto('ent')" class="col h-100 position-relative d-flex justify-content-center">
-                        <div id="framework" class="w-100 d-flex justify-content-center" v-if="voirENT==false">
-                            <h3 class="position-absolute mt-5 fw-bold text-center px-1">Environnement de travail</h3>
+                        <div id="ent" class="w-100 d-flex justify-content-center" v-if="voirENT==false">
+                            <h3 class="position-absolute mt-5 fw-bold text-center px-3">Environnement de travail</h3>
                             <img src="/img/ent-illus.jpg" alt="Personne tenant un autocollant react"  class="img-fluid w-100 object-fit-cover">
                         </div>
                         <div  v-else class="d-flex flex-column flex-wrap justify-content-around w-100">
@@ -84,6 +84,28 @@ function clikPhoto (elem) {
 
 <style lang="scss">
 
+
+//animations
+@keyframes actif {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+#framework, #ent, #natif {
+ //opacity: 1;
+ animation: actif 800ms;
+}
+
+
+
+
+
 .row.d-flex.h-100.align-items-center {
     .col {
         height: 80%;
@@ -92,7 +114,7 @@ function clikPhoto (elem) {
             color: white;
         }
 
-        #natif, #framework {
+        #natif, #framework, #ent {
             border-radius: 30px;
             box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
@@ -107,15 +129,6 @@ function clikPhoto (elem) {
     }
 }
 
-/* .v-enter-active,
-.v-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.v-enter-from,
-.v-leave-to {
-  opacity: 0;
-} */
 
 @media (max-width: 576px) {
     h3.position-absolute.mt-5  {

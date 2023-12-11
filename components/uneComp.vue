@@ -6,6 +6,8 @@ const props = defineProps ( {
     src: String
  }) 
 
+ 
+
 </script>
 
 <template>
@@ -14,13 +16,30 @@ const props = defineProps ( {
         <figcaption class="figure-caption text-center fw-bold d-flex">{{ nom }}</figcaption>
     </figure>
     <div id="barreProgr">
-        <div class="progress" role="progressbar" aria-label="Success example" :aria-valuenow="lvl" aria-valuemin="0" aria-valuemax="100">
-            <div class="progress-bar" :style="{width: lvl}"></div>
-        </div>
+            <div class="progress" role="progressbar" aria-label="Success example" :aria-valuenow="lvl" aria-valuemin="0" aria-valuemax="100">
+               <!-- <div class="progress-bar .progress-bar-animated." :style
+                ="{transform: translate('-30px')}"></div> -->
+                <div class="progress-bar .progress-bar-animated." :style
+                ="{width: lvl}"></div>
+            </div>
     </div>
 </template>
 
 <style lang="scss">
+
+
+
+//animation
+@keyframes apparition {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
 
 .figure.d-flex {
@@ -32,7 +51,6 @@ const props = defineProps ( {
     }
 
 }
-    
 
 #barreProgr {
 
@@ -44,16 +62,13 @@ const props = defineProps ( {
 
     .progress-bar {
         background-color: $jaune;
+        animation: apparition 800ms;
     }
-
-
 }
     
- 
+
 @media (max-width: 720px) {
    .figure.d-flex {
-
-
         .figure-img.img-fluid {
             width: 50%;
         } 

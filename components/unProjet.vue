@@ -87,12 +87,14 @@ onUpdated(() => {
                     </div>
                     <div id="carouselE" class="carousel slide carousel-fade">
                         <div class="carousel-inner">
-                            <div class="carousel-item" v-for="(values, index) in carrousel" :key="index" :id="index">
-                                <img :src=values class="d-block w-100" alt="...">
-                                <div class="modal-footer">
-                                    <p>{{descrip[index]}}</p>
+                            <!-- <TransitionGroup name="carrousel" tag="div"> -->
+                                <div class="carousel-item" v-for="(values, index) in carrousel" :key="index" :id="index">
+                                    <img :src=values class="d-block w-100" alt="...">
+                                    <div class="modal-footer">
+                                        <p>{{descrip[index]}}</p>
+                                    </div>
                                 </div>
-                            </div>
+                            <!-- </TransitionGroup> -->
                         </div>
                         <button @click="bougebouge('prev')" class="carousel-control-prev" type="button">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -112,6 +114,7 @@ onUpdated(() => {
 <style lang="scss">
 
 
+/// TOUTES LES ANIMATIONS ////
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.8s ease;
@@ -121,6 +124,66 @@ onUpdated(() => {
 .fade-leave-to {
   opacity: 0;
 }
+
+
+
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes apparition {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/*  .carousel-item.active {
+    transform: translateX(0px);
+} */
+
+ .carousel-item.active {
+    animation: apparition 500ms ease;
+} 
+
+.carousel-control-next:hover {
+  
+    animation: moveLeft 500ms;
+}
+
+.carousel-control-prev:hover {
+  
+  animation: moveRight 500ms;
+}
+
+
+
 
 
 #contProjets {
@@ -151,14 +214,13 @@ onUpdated(() => {
                 color: $rFonce;
                 left: 35%;
             }
+
+            .bi.bi-github:hover, 
+            .bi.bi-laptop:hover {
+                color: $rFonce;
+            }
         }
 
-         /* #carouselE {
-            img {
-                height: 300px;
-                object-fit: cover;
-            }
-        } */
 
         #carouselE {
 
@@ -192,16 +254,16 @@ onUpdated(() => {
             
             } 
 
-        .card-img-top {
+            .card-img-top {
                 
                 border-radius: 30px 30px 0 0;
                 object-fit: cover;
                 height: 60%;
-        }
+            }
 
-        .card-body {
+            .card-body {
 
-            height: 30%;
+                height: 30%;
 
                 .card-title, .card-text {
                     font-size: 14px;
@@ -241,6 +303,20 @@ onUpdated(() => {
         }
     }
 }
+
+@media (max-width: 768px) {
+    #contProjets #myCard .card {
+        .card-img-top {
+            height: 50%;
+        }
+
+        .card-body #contIlluLang {
+            height: 20%;
+        }
+    
+  }
+}
+
 
 @media (max-width: 575px) {
     #contProjets {

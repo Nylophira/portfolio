@@ -1,17 +1,12 @@
 <script setup lang="ts">
- 
-//const runtimeConfig = useRuntimeConfig()
-
 
 //Mon head
 useHead({
   title: 'Portfolio - Amandine MILLET',
   meta: [
-    { name: 'description', content: 'Présentation de mes compétences de développeur web' }
-  ]/* ,
-  script: [
-    { src: './bootstrap/dist/js/bootstrap.min.js' }
-  ] */
+    { name: 'description', content: 'Présentation de mes compétences de développeur web' }, 
+    { name: "viewport", content: "width=device-width, initial-scale=1"} 
+  ]
 })
 
 
@@ -40,7 +35,6 @@ const entree = ref(false);
 //pour l'actualisation
 if (route.path == "/") {
   entree.value = true;
-  //show.value = 'show';
 } else {
     entree.value = false;
 }
@@ -49,11 +43,8 @@ if (route.path == "/") {
 watch(() => route.path, (newPath) => {
     if (newPath === '/') {
         entree.value = true;
-        //show.value = 'show';
     } else {
-        entree.value = false;
-        //show.value = '';
-       
+        entree.value = false;       
     }
 });
 
@@ -63,7 +54,6 @@ watch(() => route.path, (newPath) => {
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   <Navi  @change="(x) => ferme = x" :ferme="ferme" :menu="show" @update:menu="(y) => show = y"/>
   <div class="container d-flex justify-content-center align-items-center" id="toutCont">
-    <!-- <div class="container d-flex"> -->
     <!-- Partie modale -->
     <div v-if="ferme" @click="openML" class="modal-overlay position-absolute top-0 start-0 w-100 h-100"></div>
     <div v-if="ferme" class="modal translate-middle top-50 start-50" tabindex="-1">
@@ -93,13 +83,7 @@ watch(() => route.path, (newPath) => {
         </div>
     </div>
     <div v-if="((show=='show')&&(entree==false))" @click="changechange" class="modal-overlay position-absolute top-0 start-0 w-100 h-100" id="couvMenu"></div>
-   <!-- <transition name="page" mode="out-in"><NuxtPage key="pages"/></transition> -->
-   <!-- <NuxtLayout @change="(x) => ferme = x" :ferme="ferme" :menu="show" @update:menu="(y) => show = y">
-    <div class="container d-flex justify-content-center align-items-center"> -->
-<!--    <Transition><div><NuxtPage/></div></Transition> -->
- <NuxtPage/>
-    <!-- </div>
-  </NuxtLayout> -->
+    <NuxtPage/>
 </div>
 </template>
 
@@ -110,55 +94,17 @@ watch(() => route.path, (newPath) => {
 
 /* Fichiers Bootstrap */
 @import 'bootstrap/dist/css/bootstrap.min.css';
-/* @import 'bootstrap-icons/font/bootstrap-icons.css' */
 
-/* .v-enter-active,
-.v-leave-active {
-  transition: all 0.4s;
-}
-.v-enter-from,
-.v-leave-to {
-  opacity: 0;
-  filter: blur(1rem);
-} */
+
 
 .page-enter-active,
 .page-leave-active {
-  transition: all 0.8s;
+  transition: all 0.4s;
 }
 .page-enter-from,
 .page-leave-to {
   opacity: 0;
-  //filter: blur(1rem);
 }
-
-/* .page-leave-active {
-  transition: all 0.8s;
-}
-
-.page-leave-to {
-  opacity: 0;
-  filter: blur(1rem);
-} */
-
-/* .rotate-enter-active,
-.rotate-leave-active {
-  transition: all 0.4s;
-}
-.rotate-enter-from,
-.rotate-leave-to {
-  opacity: 0;
-  transform: rotate3d(1, 1, 1, 15deg);
-} */
-
-/* .bounce-enter-active,
-.bounce-leave-active {
-  transition: all 0.5s;
-}
-.bounce-enter-from,
-.bounce-leave-to {
-  opacity: 0;
-}  */
 
 #couvMenu {
   z-index:1;

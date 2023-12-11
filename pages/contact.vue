@@ -98,7 +98,7 @@ function nettoyage () {
                         </div>
                         <div class="form-floating">
                             <input v-model="objetM" type="text" class="form-control" placeholder="Objet" id="objetM" name="objet" required @blur="check(objetM, $event)">
-                            <label for="objetM">Objet de votre message</label>
+                            <label for="objetM">Objet du message</label>
                             <div class="invalid-feedback">
                                 S'il vous plait, veuillez écrire l'objet de votre message.
                             </div>
@@ -117,12 +117,6 @@ function nettoyage () {
                                 Merci !
                         </div>
                     </div>
-                    <!-- <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            En cochant cette case, j'accepte que mon email soit récolté afin de pouvoir recevoir une réponse à ma demande de contact. Ce dernier n'est pas stocké et sera supprimé à la fin de notre échange.
-                        </label>
-                    </div> -->
                     <div>
                         <button class="btn btn-outline px-4" type="submit">Envoyer le formulaire</button>
                     </div>
