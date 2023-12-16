@@ -13,30 +13,19 @@ const invalideM = ref(false);
 
 const envoyerEmail = async () => {
 
-    //try {
-        
-        //const response = await fetch('/api/sendMail', {
-         fetch('/api/sendMail', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                objet: objetM.value,
-                email: mail.value,
-                message: message.value,
-            }),
-        })
-        .then( nettoyage() )
-        .catch(  console.error('Erreur lors de l\'envoi de l\'e-mail :', error) )
-        
-
-        
-   //const data = await response.json();
-   //console.log(data.message);
-  //} catch (error) {
-    //console.error('Erreur lors de l\'envoi de l\'e-mail :', error);
-  //} 
+    fetch('/api/sendMail', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            objet: objetM.value,
+            email: mail.value,
+            message: message.value,
+        }),
+    })
+    .then( nettoyage() )
+    .catch(  console.error('Erreur lors de l\'envoi de l\'e-mail :', error) )
 }
 
 //verification des champs
@@ -45,7 +34,6 @@ function check (data, e) {
     const cible = document.getElementById(cibleID);
 
     if (cibleID == "mail") {
-         //console.log("coucou !");
          let regex = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
          if (regex.test(data)) {
             cible.classList.add("is-valid"); 
@@ -84,7 +72,6 @@ function nettoyage () {
         <div class="row" id="contFormC">
             <div id="monForm" class="col h-100">
                     <form  class="p-3 p-sm-5 d-flex align-items-center flex-column" @submit.prevent="envoyerEmail">
-                        <!-- <h2 class="fs-4 pb-3">Formulaire de contact</h2> -->
                     <div class="w-100 d-flex flex-column flex-md-row mb-3 justify-content-between" id="champMailOb">
                         <div class="form-floating my-md-0 my-3">
                             <input v-model="mail" type="email" class="form-control" id="mail" placeholder="name@example.com" name="mail" required @blur="check(mail, $event)">

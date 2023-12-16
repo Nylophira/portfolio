@@ -98,7 +98,6 @@ function clikPhoto (elem) {
 
 
 #framework, #ent, #natif {
- //opacity: 1;
  animation: actif 800ms;
 }
 

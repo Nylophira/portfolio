@@ -88,6 +88,9 @@ watch(() => couleur, (newValue) => {
                                 <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
                                 <rect x="6" y="9" width="4" height="6" :fill="couleur ? 'currentColor':'none'" :stroke="couleur ? '':'currentColor'"/>
                             </svg>
+                            <Transition name="fade">
+                            <img id='illus' v-if="couleur==false" src="/favicon.ico" alt="Nom du site">
+                            </Transition>
                         </NuxtLink>
                     </li>
                     <li @click="clickMobile" class="nav-item px-4" :class="show ? '':'ms-auto'">
@@ -112,6 +115,17 @@ watch(() => couleur, (newValue) => {
 </template>
 
 <style lang="scss">
+
+///animation logo
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.8s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 
 
 
@@ -151,6 +165,11 @@ watch(() => couleur, (newValue) => {
 
     .nav-link.icone {
         border-bottom: none;
+    }
+
+    #illus {
+        width: 20px;
+        height: auto;
     }
 
 

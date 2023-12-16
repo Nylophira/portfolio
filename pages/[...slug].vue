@@ -5,7 +5,6 @@ import type { Engine } from "tsparticles-engine";
 
 async function particlesInit(engine: Engine): Promise<void> {
     await loadFull(engine);
-    //await loadSlim(engine);
 };
 
 
@@ -126,7 +125,6 @@ definePageMeta({
 <style lang="scss">
 
 #erreur {
-     //z-index: 2;
 
     h1{
     color: $rouge;

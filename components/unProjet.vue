@@ -87,14 +87,12 @@ onUpdated(() => {
                     </div>
                     <div id="carouselE" class="carousel slide carousel-fade">
                         <div class="carousel-inner">
-                            <!-- <TransitionGroup name="carrousel" tag="div"> -->
                                 <div class="carousel-item" v-for="(values, index) in carrousel" :key="index" :id="index">
                                     <img :src=values class="d-block w-100" alt="...">
                                     <div class="modal-footer">
                                         <p>{{descrip[index]}}</p>
                                     </div>
                                 </div>
-                            <!-- </TransitionGroup> -->
                         </div>
                         <button @click="bougebouge('prev')" class="carousel-control-prev" type="button">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -163,11 +161,6 @@ onUpdated(() => {
   }
 }
 
-
-/*  .carousel-item.active {
-    transform: translateX(0px);
-} */
-
  .carousel-item.active {
     animation: apparition 500ms ease;
 } 
@@ -189,15 +182,8 @@ onUpdated(() => {
 #contProjets {
 
     .modal {
-       /*  display: flex;
-        width: max-content;
-        height: max-content; */
 
         .modal-header {
-            
-            /* .modal-title.border-start.border-2.border-danger{
-                border-left-color: $rouge;
-            } */
             
             .bi.bi-github {
                 font-size: 25px;
@@ -279,8 +265,7 @@ onUpdated(() => {
             }
         }
     }
-
-   /*  A changer pour l'animation */
+    
     #myCard .card:hover {
 
          .bi.bi-info-circle-fill {

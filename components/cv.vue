@@ -1,6 +1,5 @@
 <template>
     <div>
-        <!-- penser à remplacer par le bon CV -->
         <a class="btn  btn-outline-danger fs-4 px-5" href="/Amandine_MILLET-CV.pdf" role="button">Télécharger mon CV</a>
     </div>
 </template>

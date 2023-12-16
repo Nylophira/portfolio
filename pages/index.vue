@@ -5,7 +5,6 @@ import type { Engine } from "tsparticles-engine";
 
 async function particlesInit(engine: Engine): Promise<void> {
     await loadFull(engine);
-    //await loadSlim(engine);
 };
 
 //Suppression de l'animation sur cette page là
@@ -22,7 +21,6 @@ const  options = {
   },
   fullScreen: {
     enable: true,
-    //zIndex: -1
   },
   fpsLimit: 120,
   interactivity: {
@@ -96,7 +94,6 @@ const  options = {
 </script>
 
 <template>
-    <!-- :particlesLoaded="particlesLoaded" -->
     <div id="app">
       <NuxtLink class="d-lg-none position-absolute top-0 start-0 w-100 h-100"  to="/pres"></NuxtLink>
        <vue-particles

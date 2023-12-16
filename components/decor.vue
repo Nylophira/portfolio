@@ -10,10 +10,6 @@ const props = defineProps ( {
 </script>
 
 <template>
-   <!-- <div class="container-fluid position-relative top-0 start-0 h-100 w-100">
-        <div id="decorH" class="position-absolute start-0 mt-3 ms-3" :style="{borderColor: couleur, height: taille, width: larg}"></div>
-        <div id="decorB" class="position-absolute bottom-0 end-0 me-3 mb-3" :style="{borderColor: couleur, height: taille, width: larg}"></div>
-    </div> -->
    <div id="decorH" class="position-absolute start-0 mt-3 ms-3" :style="{borderColor: couleur, height: taille, width: larg}"></div>
     <div id="decorB" class="position-absolute bottom-0 end-0 me-3 mb-3" :style="{borderColor: couleur, height: taille, width: larg}"></div>
    

@@ -17,8 +17,6 @@ const props = defineProps ( {
     </figure>
     <div id="barreProgr">
             <div class="progress" role="progressbar" aria-label="Success example" :aria-valuenow="lvl" aria-valuemin="0" aria-valuemax="100">
-               <!-- <div class="progress-bar .progress-bar-animated." :style
-                ="{transform: translate('-30px')}"></div> -->
                 <div class="progress-bar .progress-bar-animated." :style
                 ="{width: lvl}"></div>
             </div>
