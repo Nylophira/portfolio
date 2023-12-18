@@ -2,6 +2,9 @@
 
 //Mon head
 useHead({
+  htmlAttrs: {
+    lang: 'fr',
+  },
   title: 'Portfolio - Amandine MILLET',
   meta: [
     { name: 'description', content: 'Présentation de mes compétences de développeur web' }, 

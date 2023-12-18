@@ -64,7 +64,7 @@ onUpdated(() => {
             <div class="card-body d-flex align-items-end flex-column justify-content-between pb-0 pt-1">
                 <h2 class="card-title text-center w-100 mb-0 fs-6">{{nom}}</h2>
                 <div id="contIlluLang" class="d-flex w-50 pb-1 justify-content-end">
-                    <img v-for="source in langue" :src="source" alt="langage de développement" class="img-fluid me-1"> 
+                    <img v-for="source in langue" :src="source" alt="langage de développement utilisé" class="img-fluid me-1"> 
                 </div>
             </div>
         </div>
@@ -88,7 +88,7 @@ onUpdated(() => {
                     <div id="carouselE" class="carousel slide carousel-fade">
                         <div class="carousel-inner">
                                 <div class="carousel-item" v-for="(values, index) in carrousel" :key="index" :id="index">
-                                    <img :src=values class="d-block w-100" alt="...">
+                                    <img :src=values class="d-block w-100" alt="Capture d'écran du projet">
                                     <div class="modal-footer">
                                         <p>{{descrip[index]}}</p>
                                     </div>
