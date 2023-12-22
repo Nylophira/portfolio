@@ -4,7 +4,7 @@
         "name": "Création de la page d'accueil d'un site internet",
         "language": [
             "/img/CSS3.png",
-            "/img/HTML5.jpg"
+            "/img/HTML5.png"
         ],
         "outil": [
             "Figma"
@@ -19,8 +19,8 @@
         ],
         "description": [
             "Le premier objectif de ce projet était d'intégrer l'interface du site avec de l'HTML et du CSS tout en étant capable de respecter parfaitement le contenu de la maquette.",
-            "Le deuxième objectif était de rendre l'interface responsive, en travaillant en premier lieu en desktop-first puis en améliorant l'apparence du site pour qu'il soit aussi lisible et agréable à regarder en étant sur tablette ou sur mobile.",
-            "Le troisième objectif de ce projet était d'apprendre à se servir des outils de développement notamment le gestionnaire de version : git et l'hebergeur de nos dépôts distants : github."
+            "Le deuxième objectif était de rendre l'interface responsive, en travaillant en desktop-first puis en améliorant l'apparence du site pour qu'il soit aussi lisible sur tablette que sur mobile.",
+            "Le troisième objectif de ce projet était d'apprendre à se servir des outils de développement, notamment le gestionnaire de version : git et l'hebergeur de nos dépôts distants : github."
         ]
     },
     {
@@ -76,15 +76,15 @@
             "/img/grim/grim-ex-2.png"
         ],
         "description": [
-            "Ce projet exigeait de mettre en place toutes les fonctionnalités côté serveur dans une application React de notation de livre en passant par des requêtes de création, lecture, mis à jour et de suppression des données (modèle CRUD). Pour cela j'ai mis en place un serveur express avec Node.js et mongoDB en base de données.",
-            "La contrainte principale de ce projet était de réaliser une API REST sécurisée permettant notamment d'empêcher des utilisateurs mal-intentionnés à effectuer des requêtes dont ils n'ont pas les droits et de permettre aux utilisateurs d'enregistrer leurs données personnelles (mail, mot de passe) de manière sécurisée."
+            "Ce projet exigeait de mettre en place toutes les fonctionnalités côté serveur dans une application React de notation de livre en passant par des requêtes de création, lecture, mise à jour et de suppression des données (modèle CRUD). Pour cela j'ai mis en place un serveur express avec Node.js et mongoDB en base de données.",
+            "La contrainte principale de ce projet était de réaliser une API REST sécurisée permettant notamment d'empêcher des utilisateurs mal-intentionnés d'effectuer des requêtes non autorisées et de permettre aux utilisateurs d'enregistrer leurs données personnelles (mail, mot de passe) de manière sécurisée."
         ]
     },
     {
         "id": 4,
         "name": "Automatisation du suivi des qualifications des salariés",
         "language": [
-            "/img/deluge.jpg",
+            "/img/deluge.png",
             "/img/PHP.png",
             "/img/SQL.png"
         ],
@@ -94,8 +94,8 @@
             "/img/qualif/qualif-ex-2.png"
         ],
         "description": [
-            "L'objectif de ce projet était de faciliter la gestion du cycle de vie des qualifications des salariés (formation, recyclage, retrait d'habilitation, etc.) en automatisant en premier lieu ce qui pouvait l'être à l'aide du langage Deluge provenant de Zoho Creator.",
-            "Puis en deuxième lieu, d'offrir des interfaces faciles d'utilisation pour permettre aux utilisateurs de tracer tout événement particulier dans la vie professionnelle d'un salarié formé. La liaison avec le logiciel Zoho et les pages personnalisées ont été principalement réalisées avec Php."
+            "L'objectif de ce projet était de faciliter la gestion du cycle de vie des qualifications des salariés (formation, recyclage, retrait d'habilitation, etc.) en automatisant d'une part tout ce qui pouvait l'être à l'aide du langage Deluge provenant de Zoho Creator.",
+            "Puis d'autre part, d'offrir des interfaces intuititves pour permettre aux utilisateurs de tracer tout événement particulier dans la vie professionnelle d'un salarié formé. La liaison avec le logiciel Zoho et les pages personnalisées ont été principalement réalisées avec Php."
         ]
     },
     {
@@ -114,7 +114,7 @@
         ],
         "description": [
             "L'objectif de ce projet était de créer une solution applicative pour le service Qualité Sécurité Environnement (QSE) de la société cliente. Ce projet était constitué autour de 3 axes principaux : le suivi des événements sécurité (accident, incident, presqu'accident), l'analyse de ces derniers avec la mise en place d'actions correctives et le suivi des visites terrains du service QSE.",
-            "Pour réaliser l'ensemble du suivi, il a fallu en premier lieu créer les tables de données. Pour cela j'ai utilisé MySQL workbench. Puis pour afficher l'ensemble des données, j'ai crée une API qui permet la liaison des données entre le serveur php et le front-end réalisé notamment en Java Script.",
+            "Pour réaliser l'ensemble du suivi, il a fallu créer les tables de données. Pour cela j'ai utilisé MySQL workbench. Puis pour afficher l'ensemble des données, j'ai crée une API qui permet la liaison des données entre le serveur php et le front-end réalisé notamment en Java Script.",
             "Ensuite des formulaires ont été crées pour permettre aux utilisateurs de saisir les informations. Afin de rendre l'utilisation plus agréable du logiciel, des éléments supplémentaires ont été mis en place comme des boutons de recherche, un suivi des modifications effectuées avec le moyen de revenir à une version antérieur, la possibilité d'ajouter des pièces jointes, etc. "
         ]
     }

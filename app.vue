@@ -70,7 +70,6 @@ watch(() => route.path, (newPath) => {
                   <div>
                     <p>Ce site web est édité par Amandine Millet.</p>
                       <ul class="list-group">
-                      <li class="list-group-item fw-bold">Ses coordonnées sont :</li>
                       <li class="list-group-item">218 allée des abeilles 84200 Carpentras</li>
                       <li class="list-group-item">amandine_millet[at]live.fr</li>
                       </ul>

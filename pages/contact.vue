@@ -63,7 +63,7 @@ function nettoyage () {
     <div class="container d-flex justify-content-center align-items-center h-100">
     <decor :couleur="jaune" :taille="zero" :larg="moitie"/>
     <div class="row d-flex align-items-center flex-column w-100" id="contContact" :class="invalideM ? 'justify-content-center':'justify-content-around'">
-        <h2 class="text-center p-3" v-if="invalideM"> Message envoyé, merci !</h2>
+        <h1 class="text-center p-3" v-if="invalideM"> Message envoyé, merci !</h1>
         <div class="row">
             <div class="col d-flex flex-column align-items-center">
                 <Cv/>

@@ -101,7 +101,7 @@ const  options = {
             :particlesInit="particlesInit"
             :options="options"/>
         <div class="position-absolute top-50 start-50 translate-middle">
-          <h1 class="text-left align-middle">Bienvenue, <br> je suis Amandine MILLET <br>Développeuse full-stack</h1>
+          <h1 class="text-left align-middle">Bienvenue. <br> Je suis Amandine MILLET <br>Développeuse full-stack</h1>
         </div>
     </div>
 </template>

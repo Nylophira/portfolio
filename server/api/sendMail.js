@@ -17,7 +17,6 @@ export default eventHandler(async (event) => {
 
         const mailOptions = {
             from: 'a.millet.dev@gmail.com',
-           // to: 'millet@serpe.fr',
             to: 'amandine_millet@live.fr',
             subject: body.objet,
             text: `Email: ${body.email}\nSon message est: ${body.message}`

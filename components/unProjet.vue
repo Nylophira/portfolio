@@ -16,6 +16,7 @@ const props = defineProps ({
 const open = ref(false);
  function openModal () {
     open.value = !open.value;
+   
 }
 
 //partie carrousel
@@ -44,12 +45,14 @@ function bougebouge (bouton) {
 }
 
 ///première illu 
-onUpdated(() => {
+ onUpdated(() => {
 
     const cible = document.getElementById(0);
     if (cible) {
         cible.classList.add("active");
     }
+    console.log(document.getElementById("carouselE"));
+    
 })
 
 
@@ -62,7 +65,7 @@ onUpdated(() => {
             <i class="bi bi-info-circle-fill"></i>
             <img :src="cov" class="card-img-top img-fluid" alt="illustration du projet">
             <div class="card-body d-flex align-items-end flex-column justify-content-between pb-0 pt-1">
-                <h2 class="card-title text-center w-100 mb-0 fs-6">{{nom}}</h2>
+                <h1 class="card-title text-center w-100 mb-0 fs-6">{{nom}}</h1>
                 <div id="contIlluLang" class="d-flex w-50 pb-1 justify-content-end">
                     <img v-for="source in langue" :src="source" alt="langage de développement utilisé" class="img-fluid me-1"> 
                 </div>
@@ -82,7 +85,7 @@ onUpdated(() => {
                                     <i class="bi bi-box-arrow-up-right position-absolute top-50 translate-middle-y   translate-middle-x w-50"></i>
                                 </a>
                         </div>
-                        <h3 class="modal-title ms-3 ps-1 border-danger border-start border-2 fs-5">{{ nom }}</h3>
+                        <h2 class="modal-title ms-3 ps-1 border-danger border-start border-2 fs-5">{{ nom }}</h2>
                         <button @click="openModal()" type="button" class="btn-close align-self-start" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div id="carouselE" class="carousel slide carousel-fade">
@@ -281,7 +284,7 @@ onUpdated(() => {
             border-radius: 30px;
         }
 
-        .card-body, h2 {
+        .card-body, h1 {
             display: none;
             position: absolute;
             height: 0%;

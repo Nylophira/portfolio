@@ -12,14 +12,7 @@ export default defineNuxtConfig({
     }
   },
    app: {
-    //pageTransition: { name: 'rotate', mode: 'out-in' }
     pageTransition: { name: 'page', mode: 'out-in' },
-    //pageTransition: { name: 'bounce', mode: 'out-in' },
-  } /*,
-   plugins: [
-    {
-      src: './plugins/vue3-particles.ts',
-      mode: 'client',
-    }
-  ] */
+    baseURL: '/portfolio/',
+  }
 })
