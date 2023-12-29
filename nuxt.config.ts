@@ -12,7 +12,6 @@ export default defineNuxtConfig({
     }
   },
    app: {
-    pageTransition: { name: 'page', mode: 'out-in' },
-    baseURL: '/portfolio/',
+    pageTransition: { name: 'page', mode: 'out-in' }
   }
 })

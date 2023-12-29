@@ -13,7 +13,7 @@ const invalideM = ref(false);
 
 const envoyerEmail = async () => {
 
-    fetch('/api/sendMail', {
+    fetch('../sendMail.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
