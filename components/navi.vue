@@ -106,7 +106,7 @@ watch(() => couleur, (newValue) => {
                         <NuxtLink to="/contact" class="nav-link">Contact</NuxtLink>
                     </li>
                     <li @click="clickMobile" class="nav-item px-4">
-                        <a class="nav-link" @click="ouverture">Mentions Légales</a>
+                        <button class="nav-link" @click="ouverture">Mentions Légales</button>
                     </li>
                 </ul>
             </div>

@@ -95,7 +95,7 @@ const  options = {
 
 <template>
     <div id="app">
-      <NuxtLink class="d-lg-none position-absolute top-0 start-0 w-100 h-100"  to="/pres"></NuxtLink>
+      <NuxtLink class="d-lg-none position-absolute top-0 start-0 w-100 h-100"  to="/pres" aria-label="Présentation"></NuxtLink>
        <vue-particles
             id="tsparticles"
             :particlesInit="particlesInit"

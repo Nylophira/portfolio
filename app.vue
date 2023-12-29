@@ -122,7 +122,7 @@ watch(() => route.path, (newPath) => {
 }
 
 #toutCont {
-  height: 93%;
+  height: 90%;
 
 }
 
