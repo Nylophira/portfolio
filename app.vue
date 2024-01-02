@@ -7,11 +7,22 @@ useHead({
   },
   title: 'Portfolio - Amandine MILLET',
   meta: [
-    { name: 'description', content: 'Présentation de mes compétences de développeur web' }, 
+    { name: 'description', content: 'Présentation de mes compétences de développeur web.' }, 
     { name: "viewport", content: "width=device-width, initial-scale=1"} 
   ]
 })
 
+//Pour les méta-données des réseaux sociaux
+useSeoMeta({
+  ogTitle: 'Portfolio d\'Amandine MILLET - Développeuse Full-stack',
+  ogType: 'website',
+  ogUrl: 'https://www.portfolio-am.ovh/',
+  ogDescription: 'Présentation de mes compétences de développeur web.',
+  ogImage: 'https://www.portfolio-am.ovh/img/Image1_meta.png',
+  ogImageHeight: '600px',
+  ogImageWidth: '400px',
+  twitterCard: 'summary_large_image'
+})
 
 //valeurs pour la modale "mentions légales"
 const ferme = ref(false);
@@ -63,7 +74,7 @@ watch(() => route.path, (newPath) => {
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                  <h3 class="modal-title ms-3 ps-1 border-danger border-start border-2">Mentions Légales</h3>
+                  <h2 class="modal-title ms-3 ps-1 border-danger border-start border-2">Mentions Légales</h2>
                   <button @click="openML()" type="button" class="btn-close align-self-start" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">

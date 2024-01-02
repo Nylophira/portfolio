@@ -39,7 +39,7 @@ function clikPhoto (elem) {
         <div class="row d-flex h-100 w-100 align-items-center">
             <div  @click="clikPhoto('natif')" class="col position-relative d-flex">
                 <div id="natif" class="w-100 d-flex justify-content-center" v-if="voirNatif==false">
-                    <h2 class="position-absolute mt-5 fw-bold text-center px-3">Langage de développement</h2>
+                    <h1 class="position-absolute mt-5 fw-bold text-center px-3">Langage de développement</h1>
                     <img src="/img/php-illus2.jpg" alt="Personne tenant un autocollant php"  class="img-fluid w-100 h-100 object-fit-cover">
                 </div>
                 <div v-else  class="d-flex flex-column flex-wrap justify-content-between w-100">
@@ -68,7 +68,7 @@ function clikPhoto (elem) {
                 <div  @click="clikPhoto('ent')" class="col h-100 position-relative d-flex justify-content-center">
                         <div id="ent" class="w-100 d-flex justify-content-center" v-if="voirENT==false">
                             <h2 class="position-absolute mt-5 fw-bold text-center px-3">Environnement de travail</h2>
-                            <img src="/img/ent-illus.jpg" alt="Personne tenant un autocollant react"  class="img-fluid w-100 object-fit-cover">
+                            <img src="/img/ent-illus.jpg" alt="Personne tenant un autocollant node.js"  class="img-fluid w-100 object-fit-cover">
                         </div>
                         <div  v-else class="d-flex flex-column flex-wrap justify-content-around w-100">
                             <div class="d-flex flex-row align-items-center justify-content-between me-3 mb-2" v-for="values in compENT" :key="values.id">
@@ -109,7 +109,7 @@ function clikPhoto (elem) {
     .col {
         height: 80%;
 
-        h2.position-absolute.mt-5 {
+        h1.position-absolute.mt-5, h2.position-absolute.mt-5 {
             color: white;
         }
 
@@ -130,7 +130,7 @@ function clikPhoto (elem) {
 
 
 @media (max-width: 576px) {
-    h2.position-absolute.mt-5  {
+    .col h1.position-absolute.mt-5, .col h2.position-absolute.mt-5  {
             font-size: 18px;
         }
     

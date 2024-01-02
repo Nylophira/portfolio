@@ -153,11 +153,11 @@ function nettoyage () {
         }
 
         .btn.btn-outline {
-            color: $jaune;
+            color: black;
             border-color: $jaune ;
             border-radius: 30px;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-            font-size: 20px;
+            font-size: 18px;
         }
 
         .btn.btn-outline:hover {
@@ -168,6 +168,7 @@ function nettoyage () {
         .form-floating label::after {
             position: relative;
         }
+
     }
 }
 
@@ -192,9 +193,18 @@ function nettoyage () {
     }
 
     #contContact #contFormC .btn.btn-outline {
-            font-size: 16px;
+            font-size: 14px;
+    }
+
+    .form-floating {
+        label {
+            font-size: 12px;
         }
-    
+
+        .invalid-feedback, .valid-feedback {
+            font-size: 10px;
+        }
+    }
 }
 
 

@@ -8,7 +8,6 @@ const props = defineProps ({
     pages: String,
     carrousel: Array,
     descrip: Array
-    //valeur: Boolean
 })
 
 
@@ -27,7 +26,6 @@ function bougebouge (bouton) {
     const ou = parseInt(photo.id);
     let newP = photo;
     if (bouton == "next") {
-        //console.log(ou+1);
         if(ou+1>=tablCarr.value) {
             newP = document.getElementById(0);
         } else {
@@ -35,7 +33,6 @@ function bougebouge (bouton) {
         }
     } else {
         if(ou==0) {
-           // console.log(ou-1);
             newP = document.getElementById(tablCarr.value-1);
         } else {
             newP = document.getElementById(ou-1);
@@ -51,7 +48,6 @@ function bougebouge (bouton) {
     if (cible) {
         cible.classList.add("active");
     }
-    console.log(document.getElementById("carouselE"));
     
 })
 
