@@ -124,7 +124,7 @@ watch(() => route.path, (newPath) => {
 }
 
 #couvMenu {
-  z-index:1;
+  z-index:100;
 }
 
 #__nuxt {
@@ -151,6 +151,14 @@ img {
   display: flex;
   width: max-content;
   height: max-content;
+}
+
+@media (max-width: 576px) {
+
+ #toutCont .modal {
+    width: 75%;
+}
+
 }
 
 

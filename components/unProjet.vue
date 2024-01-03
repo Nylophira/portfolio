@@ -302,14 +302,4 @@ function bougebouge (bouton) {
 }
 
 
-@media (max-width: 575px) {
-    #contProjets {
-        .modal {
-            width: 75%;
-        }
-    
-  }
-}
-
-
 </style>

@@ -25,7 +25,6 @@ const envoyerEmail = async () => {
         }),
     })
     .then( nettoyage() )
-    .catch(  console.error('Erreur lors de l\'envoi de l\'e-mail :', error) )
 }
 
 //verification des champs
@@ -60,7 +59,7 @@ function nettoyage () {
 
 </script>
 <template>
-    <div class="container d-flex justify-content-center align-items-center h-100">
+    <div class="container d-flex justify-content-center align-items-start align-items-sm-center h-100 mt-3 mt-sm-0">
     <decor :couleur="jaune" :taille="zero" :larg="moitie"/>
     <div class="row d-flex align-items-center flex-column w-100 flex-nowrap" id="contContact" :class="invalideM ? 'justify-content-center':'justify-content-around'">
         <h1 class="text-center p-3" v-if="invalideM"> Message envoyé, merci !</h1>
@@ -180,31 +179,39 @@ function nettoyage () {
         .col.h-100  form #champMailOb .form-floating {
             width: 100%;
         }
-    
-    }
-}
 
-@media (max-width: 576px) {
-
-    #contContact #contFormC {
-    
-        width: 90%;
-
-    }
-
-    #contContact #contFormC .btn.btn-outline {
+        .btn.btn-outline {
             font-size: 14px;
-    }
-
-    .form-floating {
-        label {
-            font-size: 12px;
         }
+
+        .form-floating {
+            label {
+                font-size: 12px;
+            }
 
         .invalid-feedback, .valid-feedback {
             font-size: 10px;
         }
     }
+    
+    }
+
+   
+}
+
+@media (max-width: 576px) {
+
+    #contContact {
+
+        z-index: 50;
+
+        #contFormC {
+    
+            width: 100%;
+        }
+
+    }
+
 }
 
 

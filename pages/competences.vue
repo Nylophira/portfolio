@@ -34,10 +34,10 @@ function clikPhoto (elem) {
 
 <template>
     <div class="container d-flex justify-content-center align-items-center h-100">
-    <decor :couleur="rFonce" :taille="zero" :larg="moitie"/>
-    <!-- Partie langage de dev -->
-        <div class="row d-flex h-100 w-100 align-items-center">
-            <div  @click="clikPhoto('natif')" class="col position-relative d-flex">
+        <decor :couleur="rFonce" :taille="zero" :larg="moitie"/>
+        <div class="row d-flex h-100 w-100 align-items-start align-items-sm-center pt-4 pt-sm-0">
+             <!-- Partie langage de dev -->
+            <div  @click="clikPhoto('natif')" class="col position-relative d-flex pt-1 pt-sm-0">
                 <div id="natif" class="w-100 d-flex justify-content-center" v-if="voirNatif==false">
                     <h1 class="position-absolute mt-5 fw-bold text-center px-3">Langage de développement</h1>
                     <img src="/img/php-illus2.jpg" alt="Personne tenant un autocollant php"  class="img-fluid w-100 h-100 object-fit-cover">
@@ -48,7 +48,7 @@ function clikPhoto (elem) {
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col pt-1 pt-sm-0">
                 <!-- Partie framework -->
                <div class="row h-50 pb-3">
                     <div  @click="clikPhoto('fram')" class="col h-100 position-relative d-flex justify-content-center" id='test'>
@@ -105,7 +105,7 @@ function clikPhoto (elem) {
 
 
 
-.row.d-flex.h-100.align-items-center {
+.row.d-flex.h-100.align-items-sm-center {
     .col {
         height: 80%;
 
@@ -130,9 +130,17 @@ function clikPhoto (elem) {
 
 
 @media (max-width: 576px) {
-    .col h1.position-absolute.mt-5, .col h2.position-absolute.mt-5  {
-            font-size: 18px;
-        }
+
+    .row.d-flex.h-100.align-items-sm-center {
+        .col {
+
+            height: 85%;
+
+            h1.position-absolute.mt-5, .col h2.position-absolute.mt-5  {
+                font-size: 18px;
+            }
+    } 
+    }
     
 }
 
