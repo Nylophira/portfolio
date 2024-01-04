@@ -16,7 +16,7 @@
                 </html>';
     $headers[] = 'MIME-Version: 1.0';
     $headers[] = 'Content-type: text/html; charset=utf-8';
-    $headers[] = 'From: '.$email.' <'.$email.'>';
+    $headers[] = 'From: <'.$email.'>';
    
 
     if (mail($to, $subject, $content, implode("\r\n", $headers))) {

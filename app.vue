@@ -69,7 +69,7 @@ watch(() => route.path, (newPath) => {
   <Navi  @change="(x) => ferme = x" :ferme="ferme" :menu="show" @update:menu="(y) => show = y"/>
   <div class="container d-flex justify-content-center align-items-center" id="toutCont">
     <!-- Partie modale -->
-    <div v-if="ferme" @click="openML" class="modal-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+    <div v-if="ferme" @click="openML()" class="modal-overlay position-absolute top-0 start-0 w-100 h-100"></div>
     <div v-if="ferme" class="modal translate-middle top-50 start-50" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
